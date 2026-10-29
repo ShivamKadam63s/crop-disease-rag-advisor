@@ -1,0 +1,43 @@
+{
+  "crops": {
+    "tomato": ["tomato", "tomatoes", "tamatar", "tamater"],
+    "rice": ["rice", "paddy", "dhan", "chawal"],
+    "wheat": ["wheat", "gehun", "gehu", "gehoon"],
+    "cotton": ["cotton", "kapas", "bt cotton"],
+    "groundnut": ["groundnut", "peanut", "moongphali", "mungfali", "ground nut"],
+    "sugarcane": ["sugarcane", "sugar cane", "ganna", "cane"]
+  },
+  "disease_aliases": {
+    "stripe rust": "yellow rust",
+    "brown rust": "leaf rust",
+    "ralstonia": "bacterial wilt",
+    "tolcv": "tomato leaf curl virus",
+    "blb": "bacterial leaf blight",
+    "kresek": "bacterial leaf blight",
+    "pbw": "pink bollworm",
+    "tikka": "tikka leaf spot",
+    "whip smut": "smut",
+    "kernel bunt": "karnal bunt",
+    "partial bunt": "karnal bunt",
+    "neck blast": "rice blast",
+    "alternaria": "early blight",
+    "phytophthora": "late blight"
+  },
+  "chemical_aliases": {
+    "dithane": "mancozeb",
+    "dithane m-45": "mancozeb",
+    "indofil": "mancozeb",
+    "indofil m-45": "mancozeb",
+    "confidor": "imidacloprid",
+    "blitox": "copper oxychloride",
+    "bavistin": "carbendazim",
+    "tilt": "propiconazole",
+    "folicur": "tebuconazole",
+    "beam": "tricyclazole",
+    "kavach": "chlorothalonil",
+    "ridomil": "metalaxyl",
+    "validamycin": "validamycin"
+  },
+  "agri_terms": ["leaf","leaves","plant","plants","crop","field","fruit","fruits","stem","root","roots","seed","seeds","soil","spray","pest","disease","wilt","blight","rust","spot","spots","boll","bolls","panicle","ear","grain","grains","pods","pod","tillers","nursery","flower","flowers","fungus","fungal","insect","caterpillar","whitefly","worm","kheti","fasal","patta","patte"],
+  "non_agri_terms": ["cow","cows","buffalo","goat","goats","sheep","hen","hens","chicken","poultry","dog","cat","horse","pig","duck","camel","rabbit","fever","cough","headache","stomach","doctor","patient","baby","pregnant","pain","diabetes","blood","skin","tooth","cricket","movie","election","poem","weather","capital","recipe","stock","bitcoin","phone","laptop"]
+}
