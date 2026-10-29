@@ -1,0 +1,52 @@
+paths:
+  raw_docs: data/raw_docs
+  glossary: data/glossary.json
+  kb_dir: artifacts/kb
+  dataset_dir: data/dataset
+  sft_dir: data/sft
+  models_dir: artifacts/models
+  results_dir: results
+  logs_dir: logs
+kb:
+  strategy: structured        # structured | naive
+  chunk_max_words: 120
+  chunk_overlap_words: 20
+  header_in_chunk: true
+retrieval:
+  mode: local                 # local | remote (remote = FastAPI retrieval service)
+  remote_url: http://127.0.0.1:8001
+  embedder:
+    backend: fastembed         # fastembed (default, ONNX, no torch) | st (sentence-transformers) | auto | hash (offline smoke test only)
+    model: BAAI/bge-small-en-v1.5
+    query_prefix: "Represent this sentence for searching relevant passages: "
+    passage_prefix: ""
+  index_type: flat            # flat | hnsw
+  hybrid: true
+  rrf_k: 60
+  candidates: 20
+  top_k: 3
+  parent_expand: true         # add management chunks of the top disease (parent-document retrieval)
+  crop_filter: true
+  reranker: {enabled: false, model: cross-encoder/ms-marco-MiniLM-L-6-v2}
+  long_query: {enabled: true, trigger_words: 150, window_words: 100, stride_words: 50}
+prompt:
+  fewshot: true
+  max_context_words: 600
+  reorder: false
+  dedup_jaccard: 0.9
+generation:
+  mode: local                 # local | remote
+  remote_url: http://127.0.0.1:8002
+  max_new_tokens: 220
+  batch_size: 8
+decision:
+  min_dense_score: 0.50       # overwritten by `python -m agri.evaluation.calibrate`
+  min_support: 0.45
+  max_retries: 1
+  escalate_variant: null      # e.g. groq_gptoss to escalate on retry
+fallback:
+  helpline: "Kisan Call Centre 1800-180-1551 (toll-free) - please verify the current number before release"
+cost:                          # EDIT to current prices
+  gpu_usd_per_hour: 0.35
+  llm_usd_per_mtok_in: 0.10
+  llm_usd_per_mtok_out: 0.50

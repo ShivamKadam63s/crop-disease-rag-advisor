@@ -1,0 +1,11 @@
+# Every variant is Qwen2.5-0.5B-Instruct unless noted. Paths are relative to project root.
+fp16:            {backend: hf, model: Qwen/Qwen2.5-0.5B-Instruct, quant: none}
+int8:            {backend: hf, model: Qwen/Qwen2.5-0.5B-Instruct, quant: int8}
+nf4:             {backend: hf, model: Qwen/Qwen2.5-0.5B-Instruct, quant: nf4}
+lora_fp16:       {backend: hf, model: artifacts/models/lora_merged, quant: none}
+qlora_nf4:       {backend: hf, model: Qwen/Qwen2.5-0.5B-Instruct, quant: nf4, adapter_dir: artifacts/models/qlora_adapter}
+lora_merged_nf4: {backend: hf, model: artifacts/models/lora_merged, quant: nf4}
+# Reference / deployment backends (OpenAI-compatible; reads LLM_API_KEY, LLM_BASE_URL, LLM_MODEL from env)
+llm_api:         {backend: openai_compat}
+ollama:          {backend: ollama, model: qwen2.5:0.5b, host: http://127.0.0.1:11434}
+mock:            {backend: mock}      # offline smoke tests only

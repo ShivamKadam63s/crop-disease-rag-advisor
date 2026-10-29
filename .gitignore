@@ -1,0 +1,13 @@
+.env
+.venv/
+venv/
+logs/
+__pycache__/
+*.pyc
+artifacts/models/
+artifacts/tmp_train/
+artifacts/ablation/
+artifacts/smoke_kb/
+.streamlit/secrets.toml
+.DS_Store
+*.zip
