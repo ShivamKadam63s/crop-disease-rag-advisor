@@ -1,0 +1,128 @@
+{
+  "Pink bollworm": {
+    "crop": "Cotton",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "cotton-pink-bollworm"
+  },
+  "Cotton bacterial blight": {
+    "crop": "Cotton",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "cotton-cotton-bacterial-blight"
+  },
+  "Tikka leaf spot": {
+    "crop": "Groundnut",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "groundnut-tikka-leaf-spot"
+  },
+  "Groundnut rust": {
+    "crop": "Groundnut",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "groundnut-groundnut-rust"
+  },
+  "Rice blast": {
+    "crop": "Rice",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "rice-rice-blast"
+  },
+  "Bacterial leaf blight": {
+    "crop": "Rice",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "rice-bacterial-leaf-blight"
+  },
+  "Sheath blight": {
+    "crop": "Rice",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "rice-sheath-blight"
+  },
+  "Brown spot": {
+    "crop": "Rice",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "rice-brown-spot"
+  },
+  "Red rot": {
+    "crop": "Sugarcane",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "sugarcane-red-rot"
+  },
+  "Smut": {
+    "crop": "Sugarcane",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "sugarcane-smut"
+  },
+  "Early blight": {
+    "crop": "Tomato",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "tomato-early-blight"
+  },
+  "Late blight": {
+    "crop": "Tomato",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "tomato-late-blight"
+  },
+  "Tomato leaf curl virus": {
+    "crop": "Tomato",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "tomato-tomato-leaf-curl-virus"
+  },
+  "Bacterial wilt": {
+    "crop": "Tomato",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "tomato-bacterial-wilt"
+  },
+  "Yellow rust": {
+    "crop": "Wheat",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "wheat-yellow-rust"
+  },
+  "Leaf rust": {
+    "crop": "Wheat",
+    "group": "head",
+    "n_train": 45,
+    "n_test": 15,
+    "card_id": "wheat-leaf-rust"
+  },
+  "Wheat powdery mildew": {
+    "crop": "Wheat",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "wheat-wheat-powdery-mildew"
+  },
+  "Karnal bunt": {
+    "crop": "Wheat",
+    "group": "rare",
+    "n_train": 5,
+    "n_test": 3,
+    "card_id": "wheat-karnal-bunt"
+  }
+}

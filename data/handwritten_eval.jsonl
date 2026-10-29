@@ -1,0 +1,36 @@
+{"id":"hw000","symptom_text":"tomato ke patte neeche se sukhne lage hain, patton par gol gol bhure nishan hain ek ke andar ek circle jaisa","crop":"Tomato","diagnosis":"Early blight"}
+{"id":"hw001","symptom_text":"after the cloudy rainy days my tomato plants got big wet looking black patches and a white fuzz under the leaves","crop":"Tomato","diagnosis":"Late blight"}
+{"id":"hw002","symptom_text":"tomato leaves are rolled upwards and very small, plant not growing, lots of tiny white flying insects","crop":"Tomato","diagnosis":"Tomato leaf curl virus"}
+{"id":"hw003","symptom_text":"one tomato plant suddenly fell down at noon while still green, I cut the stem and put in a glass of water and white milk like thread came out","crop":"Tomato","diagnosis":"Bacterial wilt"}
+{"id":"hw004","symptom_text":"paddy field leaves have eye shaped spots with grey inside, and some panicles broke at the neck and turned black","crop":"Rice","diagnosis":"Rice blast"}
+{"id":"hw005","symptom_text":"after heavy storm my paddy leaves are drying from the tip with yellow wavy stripes along the edges","crop":"Rice","diagnosis":"Bacterial leaf blight"}
+{"id":"hw006","symptom_text":"rice plants have greyish green patches near the water level on the stem sheath and it is climbing upward, crop is very thick","crop":"Rice","diagnosis":"Sheath blight"}
+{"id":"hw007","symptom_text":"dhan ke patton par chhote chhote til jaise bhure dhabbe hain, khet ki mitti kamzor hai","crop":"Rice","diagnosis":"Brown spot"}
+{"id":"hw008","symptom_text":"gehun ke patton par peele rang ki line me dhool jaisa powder hai jo haath me lag jata hai, thandi aur kohre wala mausam","crop":"Wheat","diagnosis":"Yellow rust"}
+{"id":"hw009","symptom_text":"wheat leaves have orange dots spread randomly on top side not in lines, late in season","crop":"Wheat","diagnosis":"Leaf rust"}
+{"id":"hw010","symptom_text":"white flour like coating on my wheat leaves, it wipes off, crop is dense and heavily fertilised","crop":"Wheat","diagnosis":"Wheat powdery mildew"}
+{"id":"hw011","symptom_text":"after threshing some wheat grains were half black powder and smelled like fish, rest of the ear was fine","crop":"Wheat","diagnosis":"Karnal bunt"}
+{"id":"hw012","symptom_text":"cotton bolls have tiny holes and when I open them there are pink worms inside, flowers look twisted and closed","crop":"Cotton","diagnosis":"Pink bollworm"}
+{"id":"hw013","symptom_text":"kapas leaves have square shaped water soaked spots between veins that turn brown, and black marks on the stem near the leaf stalk","crop":"Cotton","diagnosis":"Cotton bacterial blight"}
+{"id":"hw014","symptom_text":"groundnut leaflets covered with round dark brown spots each with a yellow ring, leaves falling a lot","crop":"Groundnut","diagnosis":"Tikka leaf spot"}
+{"id":"hw015","symptom_text":"moongphali ke patton ke neeche orange powder jaisa hai aur upar bhure dhabbe, patte jaldi gir rahe hain","crop":"Groundnut","diagnosis":"Groundnut rust"}
+{"id":"hw016","symptom_text":"sugarcane top leaves drooping and drying, when I split the cane lengthwise it is red inside with white bands and smells sour","crop":"Sugarcane","diagnosis":"Red rot"}
+{"id":"hw017","symptom_text":"ganna me kuch plants ke upar kale rang ka chabuk jaisa nikla hai aur baaki ganne patle ghaas jaise ho gaye hain","crop":"Sugarcane","diagnosis":"Smut"}
+{"id":"hw018","symptom_text":"tomato fruit has dark hard sunken spot near the stem end and the stem near ground has dark lesion","crop":"Tomato","diagnosis":"Early blight"}
+{"id":"hw019","symptom_text":"tomato green fruits have firm brown blotches, whole plants collapsed in a week in cold foggy weather","crop":"Tomato","diagnosis":"Late blight"}
+{"id":"hw020","symptom_text":"tomato nursery seedlings were already curled and stunted before transplanting and whiteflies sit on them","crop":"Tomato","diagnosis":"Tomato leaf curl virus"}
+{"id":"hw021","symptom_text":"my tomato field is waterlogged and plants wilt in patches during day, inside of stem is brown","crop":"Tomato","diagnosis":"Bacterial wilt"}
+{"id":"hw022","symptom_text":"rice seedlings in nursery look burnt and have spindle spots, weather very humid with cool nights","crop":"Rice","diagnosis":"Rice blast"}
+{"id":"hw023","symptom_text":"young rice seedlings wilted and died after transplanting and a yellow sticky ooze was seen on cut leaves in the morning","crop":"Rice","diagnosis":"Bacterial leaf blight"}
+{"id":"hw024","symptom_text":"small white round hard balls floating on water in my rice field and lesions on the sheath with brown border","crop":"Rice","diagnosis":"Sheath blight"}
+{"id":"hw025","symptom_text":"dark spots on rice grain husk and leaves, seedlings in nursery blighted, soil is poor and low in potash","crop":"Rice","diagnosis":"Brown spot"}
+{"id":"hw026","symptom_text":"yellow stripes on wheat flag leaf and ear, powder yellow on my clothes after walking through the field","crop":"Wheat","diagnosis":"Yellow rust"}
+{"id":"hw027","symptom_text":"gehun me patton par narangi bhure chhote chhote daane bikhre hue hain line me nahi","crop":"Wheat","diagnosis":"Leaf rust"}
+{"id":"hw028","symptom_text":"grey white patches on lower wheat leaves with some tiny black dots in old patches, cool humid weather","crop":"Wheat","diagnosis":"Wheat powdery mildew"}
+{"id":"hw029","symptom_text":"wheat ear had black dust in few grains only, flowering time had cloudy rainy days","crop":"Wheat","diagnosis":"Karnal bunt"}
+{"id":"hw030","symptom_text":"cotton bolls opened early and the lint is stained, seeds eaten, crop is very old and I did not clear last years stalks","crop":"Cotton","diagnosis":"Pink bollworm"}
+{"id":"hw031","symptom_text":"cotton seedlings had small spots on first leaves and later black stripe on stem, boll has greasy dark spot and rotting","crop":"Cotton","diagnosis":"Cotton bacterial blight"}
+{"id":"hw032","symptom_text":"groundnut plants lost almost all leaves, left over leaves have black circular spots, underside darker, I grew groundnut in same plot for years","crop":"Groundnut","diagnosis":"Tikka leaf spot"}
+{"id":"hw033","symptom_text":"peanut leaves have rusty orange pustules below and spores blowing from neighbours field, leaves drying","crop":"Groundnut","diagnosis":"Groundnut rust"}
+{"id":"hw034","symptom_text":"cane stalks hollow and shrunken, red inside, whole clump dried after heavy monsoon, I used the same cane as seed from last crop","crop":"Sugarcane","diagnosis":"Red rot"}
+{"id":"hw035","symptom_text":"sugarcane ratoon crop has many thin grassy shoots and some whip like black structures with silver skin releasing black dust","crop":"Sugarcane","diagnosis":"Smut"}
