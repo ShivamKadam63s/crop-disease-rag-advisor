@@ -41,19 +41,18 @@ def main():
     cfg = load_config(); v = load_variants()[a.variant]; R = get_retriever(cfg); rows = read_jsonl(P(cfg["paths"]["dataset_dir"]) / "test.jsonl")[: a.n]
     msgs = [build_messages(r["symptom_text"], R.labels, R.search(r["symptom_text"])["results"] if a.rag == "on" else None, cfg["prompt"])[0] for r in rows]
     local = v["backend"] == "hf"
-    try:
-        import torch; cuda = torch.cuda.is_available()
-    except Exception: torch, cuda = None, False
-    if cuda: torch.cuda.empty_cache(); torch.cuda.reset_peak_memory_stats()
+    from agri import device as dev
+    cuda = dev.get() != "cpu"      # any accelerator (CUDA or Apple MPS); names kept for the result schema
+    if cuda: dev.empty_cache(); dev.reset_peak()
     backend = resolve_backend(a.variant, cfg)
-    res = {"variant": a.variant, "rag": a.rag == "on", "gpu": torch.cuda.get_device_name(0) if cuda else None}
+    res = {"variant": a.variant, "rag": a.rag == "on", "gpu": dev.name()}
     if local and cuda:
-        res["gpu_mem_after_load_gb"] = torch.cuda.memory_allocated() / 1e9
+        res["gpu_mem_after_load_gb"] = dev.alloc_gb()
         try: res["disk_mb"] = disk_mb(backend, v)
         except Exception as e: res["disk_mb"] = None; res["disk_error"] = str(e)[:120]
         res["n_params_m"] = sum(p.numel() for p in backend.model.parameters()) / 1e6
     for m in msgs[:2]: backend.generate(m, cfg["generation"]["max_new_tokens"])      # warm-up
-    if cuda: torch.cuda.reset_peak_memory_stats()
+    if cuda: dev.reset_peak()
     ttft, tpot, tot, nout, nin = [], [], [], [], []
     with PowerSampler() as ps:
         for m in msgs:
@@ -64,9 +63,9 @@ def main():
                 "tpot_ms_mean": float(np.mean(ok(tpot)) * 1000) if ok(tpot) else None, "latency_s_mean": float(np.mean(tot)), "tokens_in_mean": float(np.mean(nin)), "tokens_out_mean": float(np.mean(nout)),
                 "throughput_tok_s_single": float(sum(nout) / sum(tot)), "energy_wh_total": ps.wh() if local else None, "energy_wh_per_query": (ps.wh() / len(msgs)) if (local and ps.wh()) else None})
     if local and cuda:
-        res["gpu_peak_gb_single"] = torch.cuda.max_memory_allocated() / 1e9
-        torch.cuda.reset_peak_memory_stats(); t0 = time.perf_counter(); outs = backend.generate_many(msgs, cfg["generation"]["max_new_tokens"], a.batch); dt = time.perf_counter() - t0
-        res[f"throughput_tok_s_batch{a.batch}"] = sum(o["n_out"] for o in outs) / dt; res[f"gpu_peak_gb_batch{a.batch}"] = torch.cuda.max_memory_allocated() / 1e9
+        res["gpu_peak_gb_single"] = dev.peak_gb()
+        dev.reset_peak(); t0 = time.perf_counter(); outs = backend.generate_many(msgs, cfg["generation"]["max_new_tokens"], a.batch); dt = time.perf_counter() - t0
+        res[f"throughput_tok_s_batch{a.batch}"] = sum(o["n_out"] for o in outs) / dt; res[f"gpu_peak_gb_batch{a.batch}"] = dev.peak_gb()
     c = cfg["cost"]
     if local: res["cost_usd_per_1k_queries"] = c["gpu_usd_per_hour"] * (sum(tot) / 3600) / len(msgs) * 1000
     else: res["cost_usd_per_1k_queries"] = (np.mean(nin) * c["llm_usd_per_mtok_in"] + np.mean(nout) * c["llm_usd_per_mtok_out"]) / 1e6 * 1000

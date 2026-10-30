@@ -1,0 +1,41 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	guard(guard)
+	retrieve(retrieve)
+	draft(draft)
+	review(review)
+	retry(retry)
+	accept(accept)
+	fallback_oos(fallback_oos)
+	fallback_dose(fallback_dose)
+	fallback_insufficient(fallback_insufficient)
+	fallback_error(fallback_error)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> guard;
+	draft -.-> fallback_error;
+	draft -.-> review;
+	guard -. &nbsp;end&nbsp; .-> __end__;
+	guard -.-> retrieve;
+	retrieve -.-> draft;
+	retrieve -.-> fallback_dose;
+	retrieve -.-> fallback_insufficient;
+	retrieve -.-> retry;
+	retry --> retrieve;
+	review -.-> accept;
+	review -.-> fallback_dose;
+	review -.-> fallback_insufficient;
+	review -.-> fallback_oos;
+	review -.-> retry;
+	accept --> __end__;
+	fallback_dose --> __end__;
+	fallback_error --> __end__;
+	fallback_insufficient --> __end__;
+	fallback_oos --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

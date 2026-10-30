@@ -38,7 +38,11 @@ This runbook assumes you extracted the zip and have a terminal open **inside the
 | Linux with an NVIDIA GPU (8 GB VRAM minimum, 16 GB comfortable) | Everything locally, including training. `pip install -r requirements.txt` brings a CUDA torch. |
 | Linux, no GPU | Same as the Mac row. |
 
-**Mac users:** in section 2.3 do only the **[CPU]** install, and skip the **[GPU]** block. Use B-Colab for all of Part B.
+**Mac users (Apple Silicon):** the code now detects the device (`agri/device.py`: CUDA, then Apple MPS, then CPU). On a Mac you can run, locally:
+- `python -m agri.train.train --mode lora --epochs 3` (trains in fp32 on the Mac GPU / MPS), then `python -m agri.train.merge`;
+- variants `fp16`, `lora_fp16`, `llm_api` and `mock` for evaluation, efficiency and perplexity (on a Mac `fp16` runs in fp32; GPU memory is an MPS proxy, energy is empty because there is no `nvidia-smi`).
+
+Still **CUDA-only** (bitsandbytes has no macOS build): `--mode qlora` and the variants `int8`, `nf4`, `qlora_nf4`, `lora_merged_nf4`. Run those on Colab (B-Colab) and copy `results/` back. In section 2.3 install the **[CPU]** packages, then `pip install torch transformers peft accelerate` for local training (do not use `pip install -r requirements.txt` on a Mac unless you accept it skipping bitsandbytes, which it now does automatically).
 
 **Recommended workflow (works with any hardware):**
 1. Do Part A on your laptop (CPU) and confirm everything passes.

@@ -4,6 +4,7 @@
 import os, re, time
 from concurrent.futures import ThreadPoolExecutor
 from agri.config import P, load_variants, load_config
+from agri import device as dev
 
 class GenerationError(Exception):
     """Safe error: message never contains keys or internal details."""
@@ -22,9 +23,9 @@ class HFBackend(Backend):
         self.torch, self.name, self.v = torch, name, v
         path = str(P(v["model"])) if (P(v["model"])).exists() else v["model"]
         quant = v.get("quant", "none")
-        self.cuda = torch.cuda.is_available()
+        self.dev = dev.get(); self.cuda = self.dev == "cuda"
         if quant != "none" and not self.cuda:
-            raise GenerationError("8-bit/NF4 variants need a CUDA GPU (bitsandbytes).")
+            raise GenerationError("8-bit/NF4 variants need an NVIDIA CUDA GPU (bitsandbytes); not available on Mac/CPU.")
         kw = {}
         if quant == "int8": kw["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
         elif quant == "nf4":
@@ -38,6 +39,7 @@ class HFBackend(Backend):
         if v.get("adapter_dir"):
             from peft import PeftModel
             self.model = PeftModel.from_pretrained(self.model, str(P(v["adapter_dir"])))
+        if not self.cuda: self.model.to(self.dev)      # MPS or CPU (CUDA is placed by device_map)
         self.model.eval()
         self.device = next(self.model.parameters()).device
 
@@ -52,12 +54,12 @@ class HFBackend(Backend):
             def __call__(self, input_ids, scores, **kw):
                 times.append(time.perf_counter()); return torch.zeros(input_ids.shape[0], dtype=torch.bool, device=input_ids.device)
         enc = self.tok(self._text(messages), return_tensors="pt").to(self.device)
-        if self.cuda: torch.cuda.synchronize()
+        dev.sync()
         t0 = time.perf_counter()
         with torch.no_grad():
             out = self.model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, pad_token_id=self.tok.pad_token_id,
                                       stopping_criteria=StoppingCriteriaList([Tick()]))
-        if self.cuda: torch.cuda.synchronize()
+        dev.sync()
         total = time.perf_counter() - t0
         new = out[0, enc["input_ids"].shape[1]:]
         n_out = int(new.shape[0])
@@ -179,7 +181,7 @@ def get_backend(variant):
     if _CACHE and kind == "hf":  # keep only one local model in memory
         for k in [k for k in _CACHE if load_variants()[k]["backend"] == "hf"]: _CACHE.pop(k)
         try:
-            import torch, gc; gc.collect(); torch.cuda.empty_cache()
+            import gc; gc.collect(); dev.empty_cache()
         except Exception: pass
     b = {"hf": lambda: HFBackend(v, variant), "openai_compat": lambda: OpenAICompat(v, variant),
          "ollama": lambda: Ollama(v, variant), "mock": lambda: Mock()}[kind]()

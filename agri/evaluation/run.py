@@ -18,14 +18,14 @@ SUITES = {"test": "test.jsonl", "handwritten": "handwritten.jsonl", "terminology
 
 def peak_gpu():
     try:
-        import torch
-        return torch.cuda.max_memory_allocated() / 1e9 if torch.cuda.is_available() else None
+        from agri import device as dev
+        return dev.peak_gb()
     except Exception: return None
 
 def reset_gpu():
     try:
-        import torch
-        if torch.cuda.is_available(): torch.cuda.reset_peak_memory_stats()
+        from agri import device as dev
+        dev.reset_peak()
     except Exception: pass
 
 def mean(x):
