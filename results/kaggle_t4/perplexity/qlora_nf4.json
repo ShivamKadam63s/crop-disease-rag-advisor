@@ -1,0 +1,7 @@
+{
+  "variant": "qlora_nf4",
+  "source": "data/heldout_agri_text.txt",
+  "n_texts": 25,
+  "n_tokens": 480,
+  "perplexity": 46.29941573878386
+}

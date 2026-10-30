@@ -19,3 +19,10 @@ Free Colab cut the T4 session at ~2 h (twice) and then refused a GPU ("usage lim
 - Human evaluation: sheets can be generated after the runs; ratings need 2+ people.
 - Screenshots 03 (architecture diagram), 11-15; real-document KB (1.1); real token lengths (2.7, needs `transformers`, ~1 min).
 - Deployment (Streamlit Cloud via GitHub) is the friend's step.
+
+
+## Update 2026-10-31: Kaggle T4 run completed
+The remaining GPU deliverables were run on Kaggle (2x Tesla T4, L=15 per suite) and saved in `results/kaggle_t4/`:
+all 6 local variants x RAG on/off (raw), graph runs for nf4 and qlora_nf4, efficiency + perplexity for all 6, LoRA and QLoRA training JSON, unrated human-eval sheets, grids, figures, REPORT.md.
+Still open: llm_api runs (Groq key), human ratings (2+ raters), screenshots 03 and 11-15.
+Note: n=15 per suite is small; the earlier full-suite Colab lines in `results/colab/` remain the larger-sample evidence for fp16, lora_fp16 and qlora_nf4.

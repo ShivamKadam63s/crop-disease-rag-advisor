@@ -1,0 +1,16 @@
+{
+  "mode": "lora",
+  "train_seconds": 915.7616331577301,
+  "train_loss": 0.19443610157722083,
+  "val_loss": 0.17804086208343506,
+  "trainable_params": 8798208,
+  "total_params": 502830976,
+  "trainable_pct": 1.7497346861940344,
+  "peak_gpu_gb": 10.171961856,
+  "epochs": 3,
+  "lr": 0.0002,
+  "r": 16,
+  "n_train": 405,
+  "gpu": "Tesla T4",
+  "adapter_dir": "/kaggle/working/agri_advisor/artifacts/models/lora_adapter"
+}

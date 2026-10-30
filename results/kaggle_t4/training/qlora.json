@@ -1,0 +1,16 @@
+{
+  "mode": "qlora",
+  "train_seconds": 658.5479621887207,
+  "train_loss": 0.3993915968980545,
+  "val_loss": 0.3574611246585846,
+  "trainable_params": 8798208,
+  "total_params": 323917696,
+  "trainable_pct": 2.716186274676392,
+  "peak_gpu_gb": 5.430900736,
+  "epochs": 3,
+  "lr": 0.0002,
+  "r": 16,
+  "n_train": 405,
+  "gpu": "Tesla T4",
+  "adapter_dir": "/kaggle/working/agri_advisor/artifacts/models/qlora_adapter"
+}
