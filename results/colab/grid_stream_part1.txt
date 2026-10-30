@@ -1,0 +1,29 @@
+# Colab T4 stream (raw summary lines), part 1: fp16 and lora_fp16, RAG on/off
+[fp16__rag-on__raw] test: accuracy=0.660, macro_f1=0.596, rare_f1=0.526, refusal_rate=0.013
+[fp16__rag-on__raw] handwritten: accuracy=0.611, macro_f1=0.570, rare_f1=0.577, refusal_rate=0.000
+[fp16__rag-on__raw] terminology: accuracy=0.775, macro_f1=0.772, rare_f1=0.833, refusal_rate=0.050
+[fp16__rag-on__raw] long512: accuracy=0.600, macro_f1=0.558, rare_f1=0.567, refusal_rate=0.000
+[fp16__rag-on__raw] long1024: accuracy=0.533, macro_f1=0.490, rare_f1=0.447, refusal_rate=0.000
+[fp16__rag-on__raw] long2048: accuracy=0.667, macro_f1=0.614, rare_f1=0.580, refusal_rate=0.000
+[fp16__rag-on__raw] ood: refusal_rate=0.375, false_answer_rate=0.531
+[fp16__rag-off__raw] test: accuracy=0.213, macro_f1=0.133, rare_f1=0.050, refusal_rate=0.007
+[fp16__rag-off__raw] handwritten: accuracy=0.111, macro_f1=0.119, rare_f1=0.133, refusal_rate=0.000
+[fp16__rag-off__raw] terminology: accuracy=0.650, macro_f1=0.699, rare_f1=0.767, refusal_rate=0.000
+[fp16__rag-off__raw] long512: accuracy=0.100, macro_f1=0.038, rare_f1=0.000, refusal_rate=0.000
+[fp16__rag-off__raw] long1024: accuracy=0.133, macro_f1=0.028, rare_f1=0.000, refusal_rate=0.000
+[fp16__rag-off__raw] long2048: accuracy=0.100, macro_f1=0.037, rare_f1=0.000, refusal_rate=0.367
+[fp16__rag-off__raw] ood: refusal_rate=0.550, false_answer_rate=0.344
+[lora_fp16__rag-on__raw] test: accuracy=0.807, macro_f1=0.812, rare_f1=0.753, refusal_rate=0.127
+[lora_fp16__rag-on__raw] handwritten: accuracy=0.611, macro_f1=0.685, rare_f1=0.600, refusal_rate=0.333
+[lora_fp16__rag-on__raw] terminology: accuracy=0.100, macro_f1=0.120, rare_f1=0.067, refusal_rate=0.900
+[lora_fp16__rag-on__raw] long512: accuracy=0.800, macro_f1=0.811, rare_f1=0.800, refusal_rate=0.100
+[lora_fp16__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[lora_fp16__rag-on__raw] long2048: accuracy=0.600, macro_f1=0.575, rare_f1=0.580, refusal_rate=0.067
+[lora_fp16__rag-on__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+[lora_fp16__rag-off__raw] test: accuracy=0.467, macro_f1=0.278, rare_f1=0.090, refusal_rate=0.013
+[lora_fp16__rag-off__raw] handwritten: accuracy=0.333, macro_f1=0.323, rare_f1=0.267, refusal_rate=0.056
+[lora_fp16__rag-off__raw] terminology: accuracy=0.500, macro_f1=0.436, rare_f1=0.417, refusal_rate=0.000
+[lora_fp16__rag-off__raw] long512: accuracy=0.300, macro_f1=0.150, rare_f1=0.067, refusal_rate=0.000
+[lora_fp16__rag-off__raw] long1024: accuracy=0.267, macro_f1=0.128, rare_f1=0.067, refusal_rate=0.000
+[lora_fp16__rag-off__raw] long2048: accuracy=0.267, macro_f1=0.139, rare_f1=0.067, refusal_rate=0.000
+[lora_fp16__rag-off__raw] ood: refusal_rate=0.800, false_answer_rate=0.250

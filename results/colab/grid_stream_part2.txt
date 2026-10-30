@@ -1,0 +1,11 @@
+# Colab T4 stream, part 2 (session 1, full suites, n = 150/36/40/30/30/30/40). Session was cut by Colab's ~2h limit during qlora_nf4 rag-off.
+# Only these summary lines survived; the metrics.csv files from this session were lost with the VM.
+[qlora_nf4__rag-on__raw] test: accuracy=0.927, macro_f1=0.910, rare_f1=0.880, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] handwritten: accuracy=0.889, macro_f1=0.885, rare_f1=0.933, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] terminology: accuracy=0.825, macro_f1=0.851, rare_f1=0.800, refusal_rate=0.150
+[qlora_nf4__rag-on__raw] long512: accuracy=0.900, macro_f1=0.876, rare_f1=0.867, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] long2048: accuracy=0.633, macro_f1=0.607, rare_f1=0.580, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+# Timing: fp16 run ~9 min, lora_fp16 ~7-9 min, qlora_nf4 (NF4) ~23 min per run at full size.
+# Training: LoRA 553 s (val 0.133), QLoRA 903 s (val 0.133) in this second session.
