@@ -1,0 +1,24 @@
+# Full environment (data, training, evaluation, services, app). Python 3.10+, CUDA GPU for quantized variants + QLoRA; LoRA training and the fp16/lora_fp16 variants also run on Apple Silicon (MPS) or CPU.
+numpy
+pandas
+scikit-learn
+matplotlib
+pyyaml
+rank_bm25
+faiss-cpu
+sentence-transformers
+torch
+transformers>=4.44
+peft>=0.12
+accelerate>=0.33
+bitsandbytes>=0.43; sys_platform != "darwin"
+datasets
+pypdf
+python-docx
+fastapi
+uvicorn
+httpx
+requests
+langgraph
+streamlit
+fastembed

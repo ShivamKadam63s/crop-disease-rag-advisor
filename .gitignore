@@ -11,3 +11,4 @@ artifacts/smoke_kb/
 .streamlit/secrets.toml
 .DS_Store
 *.zip
+.venv-deploy/
