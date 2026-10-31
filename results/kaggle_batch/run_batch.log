@@ -1,0 +1,147 @@
+commit: d4b8e83  gate: {"min_dense_score": 0.70}  gpu: GPU 0: Tesla T4   # Kaggle batch (Save & Run All), 2026-11-01, scripts/kaggle_batch.sh, full suites; log copied as text from the version's Logs page
+{"seed": 7, "train": 410, "test": 150, "handwritten": 36, "terminology": 40, "ood": 40, "ood_train": 40, "n_classes": 18, "head_classes": 8, "tokenizer_used": true}
+DATASET VERIFIED: 0 errors
+{'rag_grounded': 258, 'rag_insufficient': 38, 'baseline': 114, 'ood_rag': 31, 'ood_base': 9} | train 405 val 45 | retrieval-miss rate in RAG SFT items: 12.8%
+train 405 (dropped 0) val 45
+trainable params: 8,798,208 / 502,830,976 = 1.75%
+{'train_runtime': '950.8', 'train_samples_per_second': '1.278', 'train_steps_per_second': '0.041', 'train_loss': '0.1956', 'epoch': '3'}
+  "train_seconds": 951.1515483856201,
+  "train_loss": 0.19563541427636758,
+  "val_loss": 0.17826074361801147,
+  "trainable_params": 8798208,
+  "trainable_pct": 1.7497346861940344,
+  "peak_gpu_gb": 10.171961856,
+merged -> /tmp/work/agri_advisor/artifacts/models/lora_merged
+train 405 (dropped 0) val 45
+trainable params: 8,798,208 / 323,917,696 = 2.72%
+{'train_runtime': '630.5', 'train_samples_per_second': '1.927', 'train_steps_per_second': '0.062', 'train_loss': '0.3974', 'epoch': '3'}
+  "train_seconds": 630.8064913749695,
+  "train_loss": 0.3973691837909894,
+  "val_loss": 0.3552848696708679,
+  "trainable_params": 8798208,
+  "trainable_pct": 2.716186274676392,
+  "peak_gpu_gb": 5.430900736,
+=== TRAIN DONE 18:57:04
+=== RUN qlora_nf4 on 18:57:04
+[qlora_nf4__rag-on__raw] test: accuracy=0.920, macro_f1=0.921, rare_f1=0.917, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] handwritten: accuracy=0.833, macro_f1=0.826, rare_f1=0.827, refusal_rate=0.056
+[qlora_nf4__rag-on__raw] terminology: accuracy=0.725, macro_f1=0.792, rare_f1=0.767, refusal_rate=0.250
+[qlora_nf4__rag-on__raw] long512: accuracy=0.900, macro_f1=0.876, rare_f1=0.867, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] long2048: accuracy=0.600, macro_f1=0.549, rare_f1=0.480, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] ood: refusal_rate=0.950, false_answer_rate=0.062
+=== RUN lora_fp16 on 19:16:39
+[lora_fp16__rag-on__raw] test: accuracy=0.720, macro_f1=0.743, rare_f1=0.684, refusal_rate=0.173
+[lora_fp16__rag-on__raw] handwritten: accuracy=0.667, macro_f1=0.759, rare_f1=0.700, refusal_rate=0.333
+[lora_fp16__rag-on__raw] terminology: accuracy=0.350, macro_f1=0.398, rare_f1=0.367, refusal_rate=0.650
+[lora_fp16__rag-on__raw] long512: accuracy=0.867, macro_f1=0.815, rare_f1=0.767, refusal_rate=0.000
+[lora_fp16__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[lora_fp16__rag-on__raw] long2048: accuracy=0.667, macro_f1=0.595, rare_f1=0.580, refusal_rate=0.033
+[lora_fp16__rag-on__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+=== RUN nf4 on 19:23:42
+[nf4__rag-on__raw] test: accuracy=0.540, macro_f1=0.553, rare_f1=0.488, refusal_rate=0.240
+[nf4__rag-on__raw] handwritten: accuracy=0.583, macro_f1=0.620, rare_f1=0.700, refusal_rate=0.278
+[nf4__rag-on__raw] terminology: accuracy=0.300, macro_f1=0.352, rare_f1=0.267, refusal_rate=0.600
+[nf4__rag-on__raw] long512: accuracy=0.633, macro_f1=0.553, rare_f1=0.533, refusal_rate=0.067
+[nf4__rag-on__raw] long1024: accuracy=0.500, macro_f1=0.510, rare_f1=0.567, refusal_rate=0.067
+[nf4__rag-on__raw] long2048: accuracy=0.433, macro_f1=0.412, rare_f1=0.547, refusal_rate=0.033
+[nf4__rag-on__raw] ood: refusal_rate=0.775, false_answer_rate=0.062
+wrote results/human_eval/{qlora_nf4,nf4,lora_fp16}__rag-on__raw__handwritten_sheet.csv (inside result_full.zip on Kaggle)
+=== RUN fp16 on 19:37:46
+[fp16__rag-on__raw] test: accuracy=0.660, macro_f1=0.596, rare_f1=0.526, refusal_rate=0.013
+[fp16__rag-on__raw] handwritten: accuracy=0.611, macro_f1=0.570, rare_f1=0.577, refusal_rate=0.000
+[fp16__rag-on__raw] terminology: accuracy=0.775, macro_f1=0.772, rare_f1=0.833, refusal_rate=0.050
+[fp16__rag-on__raw] long512: accuracy=0.600, macro_f1=0.558, rare_f1=0.567, refusal_rate=0.000
+[fp16__rag-on__raw] long1024: accuracy=0.533, macro_f1=0.490, rare_f1=0.447, refusal_rate=0.000
+[fp16__rag-on__raw] long2048: accuracy=0.667, macro_f1=0.614, rare_f1=0.580, refusal_rate=0.000
+[fp16__rag-on__raw] ood: refusal_rate=0.375, false_answer_rate=0.531
+=== RUN lora_merged_nf4 on 19:45:22
+[lora_merged_nf4__rag-on__raw] test: accuracy=0.360, macro_f1=0.415, rare_f1=0.350, refusal_rate=0.607
+[lora_merged_nf4__rag-on__raw] handwritten: accuracy=0.222, macro_f1=0.278, rare_f1=0.233, refusal_rate=0.778
+[lora_merged_nf4__rag-on__raw] terminology: accuracy=0.075, macro_f1=0.093, rare_f1=0.067, refusal_rate=0.900
+[lora_merged_nf4__rag-on__raw] long512: accuracy=0.767, macro_f1=0.763, rare_f1=0.733, refusal_rate=0.100
+[lora_merged_nf4__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[lora_merged_nf4__rag-on__raw] long2048: accuracy=0.600, macro_f1=0.513, rare_f1=0.397, refusal_rate=0.000
+[lora_merged_nf4__rag-on__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+=== RUN int8 on 19:54:20
+[int8__rag-on__raw] test: accuracy=0.653, macro_f1=0.603, rare_f1=0.543, refusal_rate=0.013
+[int8__rag-on__raw] handwritten: accuracy=0.611, macro_f1=0.570, rare_f1=0.577, refusal_rate=0.000
+[int8__rag-on__raw] terminology: accuracy=0.750, macro_f1=0.768, rare_f1=0.833, refusal_rate=0.050
+[int8__rag-on__raw] long512: accuracy=0.600, macro_f1=0.558, rare_f1=0.567, refusal_rate=0.000
+[int8__rag-on__raw] long1024: accuracy=0.500, macro_f1=0.451, rare_f1=0.447, refusal_rate=0.033
+[int8__rag-on__raw] long2048: accuracy=0.633, macro_f1=0.592, rare_f1=0.580, refusal_rate=0.000
+[int8__rag-on__raw] ood: refusal_rate=0.400, false_answer_rate=0.500
+=== RAG-ON DONE 20:32:24
+=== GRAPH qlora_nf4 20:32:24
+[qlora_nf4__rag-on__graph] test: accuracy=0.760, macro_f1=0.795, rare_f1=0.741, refusal_rate=0.200
+[qlora_nf4__rag-on__graph] handwritten: accuracy=0.778, macro_f1=0.833, rare_f1=0.800, refusal_rate=0.222
+[qlora_nf4__rag-on__graph] ood: refusal_rate=0.975, false_answer_rate=0.031
+=== GRAPH nf4 20:57:47
+[nf4__rag-on__graph] test: accuracy=0.307, macro_f1=0.431, rare_f1=0.485, refusal_rate=0.593
+[nf4__rag-on__graph] handwritten: accuracy=0.417, macro_f1=0.463, rare_f1=0.533, refusal_rate=0.556
+[nf4__rag-on__graph] ood: refusal_rate=1.000, false_answer_rate=0.000
+=== GRAPH DONE 21:14:35
+=== RUN qlora_nf4 off 21:14:35
+[qlora_nf4__rag-off__raw] test: accuracy=0.467, macro_f1=0.300, rare_f1=0.164, refusal_rate=0.000
+[qlora_nf4__rag-off__raw] handwritten: accuracy=0.278, macro_f1=0.255, rare_f1=0.133, refusal_rate=0.083
+[qlora_nf4__rag-off__raw] terminology: accuracy=0.450, macro_f1=0.408, rare_f1=0.400, refusal_rate=0.175
+[qlora_nf4__rag-off__raw] long512: accuracy=0.167, macro_f1=0.127, rare_f1=0.067, refusal_rate=0.000
+[qlora_nf4__rag-off__raw] long1024: accuracy=0.367, macro_f1=0.182, rare_f1=0.040, refusal_rate=0.000
+[qlora_nf4__rag-off__raw] long2048: accuracy=0.133, macro_f1=0.083, rare_f1=0.000, refusal_rate=0.000
+[qlora_nf4__rag-off__raw] ood: refusal_rate=0.875, false_answer_rate=0.156
+=== RUN lora_fp16 off 21:31:10
+[lora_fp16__rag-off__raw] test: accuracy=0.480, macro_f1=0.278, rare_f1=0.083, refusal_rate=0.013
+[lora_fp16__rag-off__raw] handwritten: accuracy=0.278, macro_f1=0.244, rare_f1=0.133, refusal_rate=0.056
+[lora_fp16__rag-off__raw] terminology: accuracy=0.550, macro_f1=0.462, rare_f1=0.433, refusal_rate=0.050
+[lora_fp16__rag-off__raw] long512: accuracy=0.333, macro_f1=0.154, rare_f1=0.000, refusal_rate=0.000
+[lora_fp16__rag-off__raw] long1024: accuracy=0.300, macro_f1=0.142, rare_f1=0.000, refusal_rate=0.000
+[lora_fp16__rag-off__raw] long2048: accuracy=0.167, macro_f1=0.133, rare_f1=0.000, refusal_rate=0.767
+[lora_fp16__rag-off__raw] ood: refusal_rate=0.575, false_answer_rate=0.312
+=== RUN fp16 off 21:35:12
+[fp16__rag-off__raw] test: accuracy=0.213, macro_f1=0.133, rare_f1=0.050, refusal_rate=0.007
+[fp16__rag-off__raw] handwritten: accuracy=0.111, macro_f1=0.119, rare_f1=0.133, refusal_rate=0.000
+[fp16__rag-off__raw] terminology: accuracy=0.650, macro_f1=0.699, rare_f1=0.767, refusal_rate=0.000
+[fp16__rag-off__raw] long512: accuracy=0.100, macro_f1=0.038, rare_f1=0.000, refusal_rate=0.000
+[fp16__rag-off__raw] long1024: accuracy=0.133, macro_f1=0.028, rare_f1=0.000, refusal_rate=0.000
+[fp16__rag-off__raw] long2048: accuracy=0.100, macro_f1=0.037, rare_f1=0.000, refusal_rate=0.367
+[fp16__rag-off__raw] ood: refusal_rate=0.550, false_answer_rate=0.344
+=== RUN nf4 off 21:42:04
+[nf4__rag-off__raw] test: accuracy=0.193, macro_f1=0.111, rare_f1=0.000, refusal_rate=0.047
+[nf4__rag-off__raw] handwritten: accuracy=0.083, macro_f1=0.084, rare_f1=0.067, refusal_rate=0.139
+[nf4__rag-off__raw] terminology: accuracy=0.550, macro_f1=0.598, rare_f1=0.533, refusal_rate=0.200
+[nf4__rag-off__raw] long512: accuracy=0.100, macro_f1=0.063, rare_f1=0.100, refusal_rate=0.000
+[nf4__rag-off__raw] long1024: accuracy=0.100, macro_f1=0.010, rare_f1=0.000, refusal_rate=0.000
+[nf4__rag-off__raw] long2048: accuracy=0.033, macro_f1=0.006, rare_f1=0.000, refusal_rate=0.433
+[nf4__rag-off__raw] ood: refusal_rate=0.625, false_answer_rate=0.312
+=== RUN lora_merged_nf4 off 21:54:46
+[lora_merged_nf4__rag-off__raw] test: accuracy=0.360, macro_f1=0.291, rare_f1=0.180, refusal_rate=0.280
+[lora_merged_nf4__rag-off__raw] handwritten: accuracy=0.278, macro_f1=0.306, rare_f1=0.200, refusal_rate=0.361
+[lora_merged_nf4__rag-off__raw] terminology: accuracy=0.325, macro_f1=0.335, rare_f1=0.300, refusal_rate=0.550
+[lora_merged_nf4__rag-off__raw] long512: accuracy=0.167, macro_f1=0.100, rare_f1=0.000, refusal_rate=0.133
+[lora_merged_nf4__rag-off__raw] long1024: accuracy=0.267, macro_f1=0.134, rare_f1=0.000, refusal_rate=0.000
+[lora_merged_nf4__rag-off__raw] long2048: accuracy=0.267, macro_f1=0.153, rare_f1=0.040, refusal_rate=0.000
+[lora_merged_nf4__rag-off__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+=== RUN int8 off 22:01:22
+[int8__rag-off__raw] test: accuracy=0.227, macro_f1=0.143, rare_f1=0.050, refusal_rate=0.007
+[int8__rag-off__raw] handwritten: accuracy=0.083, macro_f1=0.073, rare_f1=0.050, refusal_rate=0.000
+[int8__rag-off__raw] terminology: accuracy=0.675, macro_f1=0.723, rare_f1=0.767, refusal_rate=0.000
+[int8__rag-off__raw] long512: accuracy=0.133, macro_f1=0.094, rare_f1=0.100, refusal_rate=0.000
+[int8__rag-off__raw] long1024: accuracy=0.167, macro_f1=0.084, rare_f1=0.100, refusal_rate=0.000
+[int8__rag-off__raw] long2048: accuracy=0.167, macro_f1=0.073, rare_f1=0.000, refusal_rate=0.133
+[int8__rag-off__raw] ood: refusal_rate=0.500, false_answer_rate=0.375
+=== RAG-OFF DONE 22:39:18
+=== EFFPPL qlora_nf4 22:39:18
+{'variant': 'qlora_nf4', 'source': 'data/heldout_agri_text.txt', 'n_texts': 25, 'n_tokens': 480, 'perplexity': 46.682764019750934}
+=== EFFPPL fp16 22:43:54
+{'variant': 'fp16', 'source': 'data/heldout_agri_text.txt', 'n_texts': 25, 'n_tokens': 480, 'perplexity': 33.365782949094736}
+=== EFFPPL nf4 22:45:27
+{'variant': 'nf4', 'source': 'data/heldout_agri_text.txt', 'n_texts': 25, 'n_tokens': 480, 'perplexity': 47.660262582746164}
+=== EFFPPL lora_fp16 22:47:49
+{'variant': 'lora_fp16', 'source': 'data/heldout_agri_text.txt', 'n_texts': 25, 'n_tokens': 480, 'perplexity': 32.840939317046676}
+=== EFFPPL lora_merged_nf4 22:49:36
+{'variant': 'lora_merged_nf4', 'source': 'data/heldout_agri_text.txt', 'n_texts': 25, 'n_tokens': 480, 'perplexity': 49.26773733027753}
+=== EFFPPL int8 22:51:44
+{'variant': 'int8', 'source': 'data/heldout_agri_text.txt', 'n_texts': 25, 'n_tokens': 480, 'perplexity': 33.15527551558973}
+wrote results/REPORT.md and grids/figures
+=== ALL DONE 22:58:00
+# The per-run CSVs, efficiency JSON files, human-eval sheets, grids and figures are in result_full.zip (1.57 MB) in the Kaggle output of notebook ruchirkadam1729/notebookc01f1dfb73 (Version 1). They could not be downloaded from the in-app browser.

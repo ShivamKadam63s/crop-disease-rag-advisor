@@ -37,3 +37,10 @@ RAG-on, full suites (test acc / handwritten acc / OOD refusal): qlora_nf4 0.907 
 `results/kaggle_full/run_full_partial.log` (hand-transcribed from the notebook page): all 6 RAG-on full-suite runs, both graph runs at gate 0.70, and part of qlora_nf4 RAG-off. Kaggle's idle timeout killed the session during the first RAG-off run, so there are still no per-run CSVs, efficiency/perplexity files or human sheets for the full-size runs.
 Graph pipeline at gate 0.70: qlora_nf4 test 0.727 (refusal 0.22), handwritten 0.806, ood refusal 0.975; nf4 test 0.307 (refusal 0.59), ood refusal 1.0. The decision layer trades accuracy for safety, and with the nf4 model it refuses a lot.
 lora_merged_nf4 RAG-on is healthy in this run too (test 0.813): across 3 runs one collapsed (n=15 Kaggle), two did not, so the earlier collapse claim stays retracted.
+
+
+## Update 2026-11-01: Kaggle batch run COMPLETE (results/kaggle_batch/run_batch.log)
+Full-size run, `Save & Run All`, T4, gate 0.70, 4 h 30 min, ALL DONE: 6 variants x RAG on/off, graph runs for qlora_nf4 and nf4, perplexity for all 6, human-eval sheets (qlora_nf4, nf4, lora_fp16), grids and REPORT.md. The per-run CSVs, efficiency JSONs, sheets and figures are in result_full.zip (1.57 MB) in the Kaggle output of notebook ruchirkadam1729/notebookc01f1dfb73 (Version 1): the in-app browser could not download it, so it must be fetched from a normal browser (Output tab -> result_full.zip). All summary numbers are in the log, copied as text.
+Headline (RAG on, test acc): qlora_nf4 0.920, fp16 0.660, int8 0.653, nf4 0.540, lora_fp16 0.720, lora_merged_nf4 0.360. Graph pipeline at 0.70: qlora_nf4 test 0.760 / handwritten 0.778 / ood refusal 0.975; nf4 test 0.307 (refusal 0.593).
+Training varies run to run: lora_fp16 test 0.867 (Colab) vs 0.720 (this run); QLoRA train_loss 0.13 (Colab) vs 0.40 (Kaggle) with similar accuracy. lora_merged_nf4 over-refused in 2 of 4 trainings. Quantized-only variants (fp16/int8/nf4) are deterministic and identical across runs.
+Perplexity (held-out text): fp16 33.4, int8 33.2, lora_fp16 32.8, nf4 47.7, qlora_nf4 46.7, lora_merged_nf4 49.3.

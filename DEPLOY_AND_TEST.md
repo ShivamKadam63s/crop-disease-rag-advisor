@@ -91,6 +91,6 @@ API check: `uvicorn agri.service:app` then open `/docs` and call `/diagnose`.
 ## 7. Honest limitations to state in the report
 
 - The retrieval gate 0.70 was tuned on evaluation data (`agri.evaluation.threshold_sweep`). Report it as a "tuned operating point" next to the train-calibrated 0.706 / 0.731.
-- `lora_merged_nf4` is inconsistent across runs: it over-refused in the n=15 Kaggle run (73-93% refusal) but was fine in the full-size Colab run (test 0.75, refusal 6%). Report both; do not claim a systematic post-merge collapse without more seeds. It is not the recommended variant either way (qlora_nf4 is better).
+- `lora_merged_nf4` is unstable across training runs: it over-refused in 2 of 4 independent trainings (Kaggle n=15: refusal 73-93%; Kaggle batch full-size: test acc 0.36, refusal 61%) and was fine in the other 2 (Colab: test 0.75; Kaggle partial: test 0.81). Merging LoRA into a 4-bit model is therefore unreliable here; do not deploy it. qlora_nf4 was the best variant in all 4 runs (test 0.91-0.93 with RAG on).
 - No hosted-model (Groq) evaluation runs; the Groq key is used only for the live app.
 - Human evaluation: sheets in `results/human_eval/` need 2+ raters.
