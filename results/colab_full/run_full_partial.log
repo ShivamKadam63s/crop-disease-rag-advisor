@@ -1,0 +1,63 @@
+commit: 0338466  gate: {"min_dense_score": 0.70}        # Colab T4, 2026-10-31, scripts/kaggle_full_rerun.sh, full suites (no --limit)
+{"seed": 7, "train": 410, "test": 150, "handwritten": 36, "terminology": 40, "ood": 40, "ood_train": 40, "n_classes": 18, "head_classes": 8, "tokenizer_used": true}
+DATASET VERIFIED: 0 errors
+{'rag_grounded': 258, 'rag_insufficient': 38, 'baseline': 114, 'ood_rag': 31, 'ood_base': 9} | train 405 val 45 | retrieval-miss rate in RAG SFT items: 12.8%
+LoRA: trainable params: 8,798,208 / 502,830,976 = 1.75%
+{'train_runtime': '555.9', 'train_samples_per_second': '2.185', 'train_steps_per_second': '0.14', 'train_loss': '0.1226', 'epoch': '3'}
+  "train_seconds": 556.2889246940613, "train_loss": 0.12257859469033204, "val_loss": 0.1355346292257309, "peak_gpu_gb": 8.976813568
+QLoRA: trainable params: 8,798,208 / 323,917,696 = 2.72%   (4-bit packing shrinks the denominator; same 8,798,208 trainable params as LoRA)
+{'train_runtime': '898.6', 'train_samples_per_second': '1.352', 'train_steps_per_second': '0.087', 'train_loss': '0.1306', 'epoch': '3'}
+  "train_seconds": 898.9535353183746, "train_loss": 0.1305847900131574, "val_loss": 0.1321587711572647, "peak_gpu_gb": 3.296026112
+=== TRAIN DONE 09:55:01
+=== RUN qlora_nf4 on 09:55:01
+[qlora_nf4__rag-on__raw] test: accuracy=0.907, macro_f1=0.887, rare_f1=0.850, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] handwritten: accuracy=0.861, macro_f1=0.856, rare_f1=0.900, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] terminology: accuracy=0.800, macro_f1=0.833, rare_f1=0.800, refusal_rate=0.175
+[qlora_nf4__rag-on__raw] long512: accuracy=0.900, macro_f1=0.876, rare_f1=0.867, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] long2048: accuracy=0.633, macro_f1=0.588, rare_f1=0.580, refusal_rate=0.000
+[qlora_nf4__rag-on__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+=== RUN lora_fp16 on 10:16:14
+[lora_fp16__rag-on__raw] test: accuracy=0.867, macro_f1=0.856, rare_f1=0.815, refusal_rate=0.033
+[lora_fp16__rag-on__raw] handwritten: accuracy=0.778, macro_f1=0.781, rare_f1=0.767, refusal_rate=0.083
+[lora_fp16__rag-on__raw] terminology: accuracy=0.650, macro_f1=0.711, rare_f1=0.667, refusal_rate=0.350
+[lora_fp16__rag-on__raw] long512: accuracy=0.900, macro_f1=0.876, rare_f1=0.867, refusal_rate=0.000
+[lora_fp16__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[lora_fp16__rag-on__raw] long2048: accuracy=0.600, macro_f1=0.578, rare_f1=0.580, refusal_rate=0.033
+[lora_fp16__rag-on__raw] ood: refusal_rate=1.000, false_answer_rate=0.000
+=== RUN fp16 on 10:24:23
+[fp16__rag-on__raw] test: accuracy=0.660, macro_f1=0.596, rare_f1=0.526, refusal_rate=0.013
+[fp16__rag-on__raw] handwritten: accuracy=0.611, macro_f1=0.570, rare_f1=0.577, refusal_rate=0.000
+[fp16__rag-on__raw] terminology: accuracy=0.775, macro_f1=0.772, rare_f1=0.833, refusal_rate=0.050
+[fp16__rag-on__raw] long512: accuracy=0.600, macro_f1=0.558, rare_f1=0.567, refusal_rate=0.000
+[fp16__rag-on__raw] long1024: accuracy=0.533, macro_f1=0.490, rare_f1=0.447, refusal_rate=0.000
+[fp16__rag-on__raw] long2048: accuracy=0.667, macro_f1=0.614, rare_f1=0.580, refusal_rate=0.000
+[fp16__rag-on__raw] ood: refusal_rate=0.375, false_answer_rate=0.531
+=== RUN nf4 on 10:33:11
+[nf4__rag-on__raw] test: accuracy=0.540, macro_f1=0.553, rare_f1=0.488, refusal_rate=0.240
+[nf4__rag-on__raw] handwritten: accuracy=0.583, macro_f1=0.620, rare_f1=0.700, refusal_rate=0.278
+[nf4__rag-on__raw] terminology: accuracy=0.300, macro_f1=0.352, rare_f1=0.267, refusal_rate=0.600
+[nf4__rag-on__raw] long512: accuracy=0.633, macro_f1=0.553, rare_f1=0.533, refusal_rate=0.067
+[nf4__rag-on__raw] long1024: accuracy=0.500, macro_f1=0.510, rare_f1=0.567, refusal_rate=0.067
+[nf4__rag-on__raw] long2048: accuracy=0.433, macro_f1=0.412, rare_f1=0.547, refusal_rate=0.033
+[nf4__rag-on__raw] ood: refusal_rate=0.775, false_answer_rate=0.062
+=== RUN lora_merged_nf4 on 10:48:35
+[lora_merged_nf4__rag-on__raw] test: accuracy=0.753, macro_f1=0.732, rare_f1=0.664, refusal_rate=0.060
+[lora_merged_nf4__rag-on__raw] handwritten: accuracy=0.778, macro_f1=0.789, rare_f1=0.780, refusal_rate=0.111
+[lora_merged_nf4__rag-on__raw] terminology: accuracy=0.425, macro_f1=0.401, rare_f1=0.300, refusal_rate=0.525
+[lora_merged_nf4__rag-on__raw] long512: accuracy=0.733, macro_f1=0.610, rare_f1=0.433, refusal_rate=0.033
+[lora_merged_nf4__rag-on__raw] long1024: accuracy=0.700, macro_f1=0.654, rare_f1=0.633, refusal_rate=0.000
+[lora_merged_nf4__rag-on__raw] long2048: accuracy=0.500, macro_f1=0.407, rare_f1=0.367, refusal_rate=0.000
+[lora_merged_nf4__rag-on__raw] ood: refusal_rate=0.875, false_answer_rate=0.125
+=== RUN int8 on 10:59:55
+[int8__rag-on__raw] test: accuracy=0.653, macro_f1=0.603, rare_f1=0.543, refusal_rate=0.013
+[int8__rag-on__raw] handwritten: accuracy=0.611, macro_f1=0.570, rare_f1=0.577, refusal_rate=0.000
+[int8__rag-on__raw] terminology: accuracy=0.750, macro_f1=0.768, rare_f1=0.833, refusal_rate=0.050
+[int8__rag-on__raw] long512: accuracy=0.600, macro_f1=0.558, rare_f1=0.567, refusal_rate=0.000
+[int8__rag-on__raw] long1024: accuracy=0.500, macro_f1=0.451, rare_f1=0.447, refusal_rate=0.033
+[int8__rag-on__raw] long2048: accuracy=0.633, macro_f1=0.592, rare_f1=0.580, refusal_rate=0.000
+[int8__rag-on__raw] ood: refusal_rate=0.400, false_answer_rate=0.500
+=== RAG-ON DONE 11:40:23
+=== GRAPH qlora_nf4 11:40:23
+# --- Colab runtime was cut here (~2 h session limit). Graph runs, RAG-off runs, efficiency/perplexity and human sheets did NOT run in this session.
+# Only these summary lines were captured from the notebook page; the per-run files on the VM (metrics.csv, predictions) are gone.
