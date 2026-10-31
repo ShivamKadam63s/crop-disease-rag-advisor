@@ -4,7 +4,7 @@
 # Kaggle: Accelerator = GPU T4 x2, Internet = on.   Survives kernel crashes:  !nohup bash run_full.sh > run_full.log 2>&1 &   then  !tail -30 run_full.log
 # Steps never abort the script; a failed step prints its error and the next one runs. Order is by priority (RAG-on first).
 export PYTHONUTF8=1
-W=/kaggle/working; [ -d /kaggle ] || W=/content
+W=/kaggle/working; [ -d /kaggle/working ] || W=/content
 cd $W
 # resumable: an existing checkout (adapters, finished runs) is kept; delete agri_advisor by hand for a clean start
 [ -d agri_advisor/.git ] || git clone -q -b mac-device-support https://gitlab.com/shivamkadam63-group/crop-disease-rag-advisor.git agri_advisor
