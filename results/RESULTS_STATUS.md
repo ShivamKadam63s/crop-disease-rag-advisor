@@ -26,3 +26,8 @@ The remaining GPU deliverables were run on Kaggle (2x Tesla T4, L=15 per suite) 
 all 6 local variants x RAG on/off (raw), graph runs for nf4 and qlora_nf4, efficiency + perplexity for all 6, LoRA and QLoRA training JSON, unrated human-eval sheets, grids, figures, REPORT.md.
 Still open: llm_api runs (Groq key), human ratings (2+ raters), screenshots 03 and 11-15.
 Note: n=15 per suite is small; the earlier full-suite Colab lines in `results/colab/` remain the larger-sample evidence for fp16, lora_fp16 and qlora_nf4.
+
+
+## Update 2026-10-31 (later): full-size Colab run, partial
+`results/colab_full/run_full_partial.log` holds the full-suite RAG-on summary lines for all 6 variants (n = 150 test / 36 handwritten / 40 terminology / 40 ood / 30 per long suite). The Colab runtime was cut at ~2 h, so graph runs at gate 0.70, RAG-off full-size runs, efficiency/perplexity and the human sheets for the full-size runs are still missing; per-run CSVs from that VM are gone (only the summary lines were captured).
+RAG-on, full suites (test acc / handwritten acc / OOD refusal): qlora_nf4 0.907 / 0.861 / 1.00; lora_fp16 0.867 / 0.778 / 1.00; lora_merged_nf4 0.753 / 0.778 / 0.875; fp16 0.660 / 0.611 / 0.375; int8 0.653 / 0.611 / 0.40; nf4 0.540 / 0.583 / 0.775.
