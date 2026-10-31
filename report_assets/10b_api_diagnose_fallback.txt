@@ -1,0 +1,54 @@
+$ curl -s -X POST http://127.0.0.1:8000/diagnose -H 'Content-Type: application/json' -d '{"text": "how much dithane for tomato blight per litre", "variant": "llm_api", "use_rag": true}' | python -m json.tool
+{
+    "status": "fallback",
+    "type": "dose",
+    "message": "I can't give a spray dose because my documents do not contain a verified dose for this case. Doses depend on the product, crop stage and spray volume. Please follow the label of a registered product and ask your local agriculture officer. For reliable help, contact your local agriculture officer or Krishi Vigyan Kendra. Kisan Call Centre 1800-180-1551 (toll-free) - please verify the current number before release.",
+    "variant": "llm_api",
+    "attempts": 1,
+    "trace": [
+        {
+            "step": "guard",
+            "intent": "dosage"
+        },
+        {
+            "step": "retrieve",
+            "attempt": 0,
+            "k": 3,
+            "dense_top": 0.706,
+            "crop": "Tomato",
+            "chunks": [
+                [
+                    "tomato-late-blight::chemical_control::0",
+                    "direct"
+                ],
+                [
+                    "tomato-early-blight::chemical_control::0",
+                    "direct"
+                ],
+                [
+                    "tomato-early-blight::favorable_conditions::0",
+                    "direct"
+                ],
+                [
+                    "tomato-early-blight::cultural_control::0",
+                    "parent"
+                ],
+                [
+                    "tomato-early-blight::biological_control::0",
+                    "parent"
+                ]
+            ],
+            "ms": 10.6
+        },
+        {
+            "step": "fallback",
+            "type": "dose"
+        }
+    ],
+    "kb_version": "ad3be9cfa693",
+    "latency_ms": 11.696291010593995,
+    "gen_ms": null,
+    "intent": "dosage",
+    "reasons": []
+}
+[exit 0]

@@ -1,0 +1,7 @@
+$ python -m agri.evaluation.load_test --n 200
+ mode  concurrency  queries    qps  p50_ms  p95_ms
+local            1      150 242.76    3.92    5.40
+local            4      150 477.21    7.89   13.29
+local            8      150 644.31   11.83   18.07
+local           16      150 634.76   20.69   42.08
+[exit 0]

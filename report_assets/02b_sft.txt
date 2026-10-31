@@ -1,0 +1,3 @@
+$ python -m agri.train.sft
+{'rag_grounded': 257, 'rag_insufficient': 39, 'baseline': 114, 'ood_rag': 31, 'ood_base': 9} | train 405 val 45 | retrieval-miss rate in RAG SFT items: 13.2%
+[exit 0]

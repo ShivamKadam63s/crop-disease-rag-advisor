@@ -1,0 +1,3 @@
+$ python -m agri.datagen.build_dataset
+{"seed": 7, "train": 410, "test": 150, "handwritten": 36, "terminology": 40, "ood": 40, "ood_train": 40, "n_classes": 18, "head_classes": 8, "tokenizer_used": false}
+[exit 0]

@@ -1,0 +1,3 @@
+$ python -m agri.kb.build
+KB built: 112 chunks, 18 labels, version ad3be9cfa693, warnings: 0 -> /Users/justmessinaround/jupyternb/llm-lab/exp8-clone/crop-disease-rag-advisor/artifacts/kb
+[exit 0]

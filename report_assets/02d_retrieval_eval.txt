@@ -1,0 +1,23 @@
+$ python -m agri.evaluation.retrieval_eval
+      suite                    config  recall@1  recall@3  recall@5   mrr  ndcg@5   n  latency_ms
+       test                     dense     0.873     0.967     0.993 0.924   0.903 150       3.999
+       test                      bm25     1.000     1.000     1.000 1.000   0.956 150       0.183
+       test                    hybrid     0.913     1.000     1.000 0.956   0.911 150       4.097
+       test     hybrid_no_crop_filter     0.893     1.000     1.000 0.946   0.929 150       4.049
+       test hybrid_no_alias_expansion     0.913     1.000     1.000 0.956   0.911 150       4.029
+handwritten                     dense     0.861     0.861     0.917 0.874   0.838  36       4.135
+handwritten                      bm25     0.889     0.917     0.944 0.910   0.888  36       0.214
+handwritten                    hybrid     0.889     0.917     0.944 0.908   0.874  36       4.293
+handwritten     hybrid_no_crop_filter     0.833     0.889     0.889 0.856   0.836  36       4.236
+handwritten hybrid_no_alias_expansion     0.889     0.917     0.944 0.908   0.874  36       4.280
+terminology                     dense     0.950     1.000     1.000 0.971   0.950  40       4.616
+terminology                      bm25     1.000     1.000     1.000 1.000   0.978  40       0.212
+terminology                    hybrid     0.975     1.000     1.000 0.988   0.966  40       4.755
+terminology     hybrid_no_crop_filter     0.975     0.975     0.975 0.975   0.944  40       4.734
+terminology hybrid_no_alias_expansion     0.975     1.000     1.000 0.988   0.963  40       4.528
+   long1024                     dense     0.300     0.733     0.933 0.536   0.636  30     162.289
+   long1024                      bm25     0.367     0.767     0.933 0.584   0.668  30       8.444
+   long1024                    hybrid     0.433     0.833     0.933 0.640   0.697  30     167.909
+   long1024     hybrid_no_crop_filter     0.633     0.700     0.833 0.698   0.706  30     171.522
+   long1024 hybrid_no_alias_expansion     0.433     0.833     0.933 0.640   0.697  30     166.358
+[exit 0]

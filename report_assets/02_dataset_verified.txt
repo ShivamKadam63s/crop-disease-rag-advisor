@@ -1,0 +1,28 @@
+$ python -m agri.datagen.verify
+{
+ "max_test_train_jaccard_same_class": 0.6,
+ "counts": {
+  "train": 410,
+  "test": 150,
+  "handwritten": 36,
+  "ood_train": 40,
+  "long512": 30,
+  "long1024": 30,
+  "long2048": 30,
+  "terminology": 40,
+  "ood": 40
+ },
+ "ood_categories": {
+  "livestock": 8,
+  "human": 6,
+  "unseen_crop": 10,
+  "dose_unsupported": 8,
+  "general": 8
+ },
+ "rare_test_samples_per_class": 3
+}
+WARN: Rare classes have only 3 test samples each: per-class F1 is noisy; report with this caveat.
+WARN: Train/test texts are template-composed from KB symptom statements (last 2 per class are test-only). Use the handwritten set as the independent check; expect optimistic numbers on 'test'.
+
+DATASET VERIFIED: 0 errors
+[exit 0]

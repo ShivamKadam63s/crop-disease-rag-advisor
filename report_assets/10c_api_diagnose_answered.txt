@@ -1,0 +1,128 @@
+$ curl -s -X POST http://127.0.0.1:8000/diagnose -H 'Content-Type: application/json' -d '{"text": "my tomato leaves have brown rings like target and yellow around", "variant": "llm_api", "use_rag": true}' | python -m json.tool
+{
+    "status": "answered",
+    "diagnosis": "Early blight",
+    "crop": "Tomato",
+    "advice": "Remove and destroy infected leaves and crop debris. Rotate with non-solanaceous crops. Avoid overhead irrigation and keep plants spaced and staked for airflow. Seed or soil treatment with Trichoderma based products can reduce early infection. Protective fungicides such as mancozeb, chlorothalonil or copper-based products are commonly used. Follow the product label for dose and spray interval.",
+    "needs_expert": false,
+    "sources": [
+        {
+            "id": "S1",
+            "chunk_id": "tomato-early-blight::symptoms::0",
+            "title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+            "crop": "Tomato",
+            "disease": "Early blight",
+            "section": "Symptoms",
+            "text": "brown spots with concentric rings like a target board on older lower leaves; yellow patch around the leaf spots and leaves dry up and fall; dark sunken spots on the stem near the soil; dark leathery spots near the stalk end of the fruit; disease starts on lower leaves and moves upward",
+            "doc_path": "data/raw_docs/tomato.md",
+            "page": 1,
+            "start": 347,
+            "end": 632,
+            "url": ""
+        },
+        {
+            "id": "S4",
+            "chunk_id": "tomato-early-blight::cultural_control::0",
+            "title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+            "crop": "Tomato",
+            "disease": "Early blight",
+            "section": "Cultural control",
+            "text": "Remove and destroy infected leaves and crop debris. Rotate with non-solanaceous crops. Avoid overhead irrigation and keep plants spaced and staked for airflow.",
+            "doc_path": "data/raw_docs/tomato.md",
+            "page": 1,
+            "start": 762,
+            "end": 921,
+            "url": ""
+        },
+        {
+            "id": "S5",
+            "chunk_id": "tomato-early-blight::biological_control::0",
+            "title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+            "crop": "Tomato",
+            "disease": "Early blight",
+            "section": "Biological control",
+            "text": "Seed or soil treatment with Trichoderma based products can reduce early infection.",
+            "doc_path": "data/raw_docs/tomato.md",
+            "page": 1,
+            "start": 942,
+            "end": 1024,
+            "url": ""
+        },
+        {
+            "id": "S6",
+            "chunk_id": "tomato-early-blight::chemical_control::0",
+            "title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+            "crop": "Tomato",
+            "disease": "Early blight",
+            "section": "Chemical control",
+            "text": "Protective fungicides such as mancozeb, chlorothalonil or copper-based products are commonly used. Follow the product label for dose and spray interval.",
+            "doc_path": "data/raw_docs/tomato.md",
+            "page": 1,
+            "start": 1043,
+            "end": 1195,
+            "url": ""
+        }
+    ],
+    "support": 1.0,
+    "variant": "llm_api",
+    "attempts": 1,
+    "trace": [
+        {
+            "step": "guard",
+            "intent": "diagnose"
+        },
+        {
+            "step": "retrieve",
+            "attempt": 0,
+            "k": 3,
+            "dense_top": 0.812,
+            "crop": "Tomato",
+            "chunks": [
+                [
+                    "tomato-early-blight::symptoms::0",
+                    "direct"
+                ],
+                [
+                    "tomato-late-blight::symptoms::0",
+                    "direct"
+                ],
+                [
+                    "tomato-early-blight::overview::0",
+                    "direct"
+                ],
+                [
+                    "tomato-early-blight::cultural_control::0",
+                    "parent"
+                ],
+                [
+                    "tomato-early-blight::biological_control::0",
+                    "parent"
+                ],
+                [
+                    "tomato-early-blight::chemical_control::0",
+                    "parent"
+                ]
+            ],
+            "ms": 4.9
+        },
+        {
+            "step": "draft",
+            "variant": "llm_api",
+            "strict": false,
+            "diagnosis": "Early blight",
+            "n_out": 152
+        },
+        {
+            "step": "review",
+            "ok": true,
+            "reasons": [],
+            "support": 1.0
+        }
+    ],
+    "kb_version": "ad3be9cfa693",
+    "latency_ms": 757.4827079952229,
+    "gen_ms": 745.881000009831,
+    "intent": "diagnose",
+    "reasons": []
+}
+[exit 0]
