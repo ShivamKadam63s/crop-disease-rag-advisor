@@ -1,0 +1,22 @@
+{
+  "built_at": "2026-10-30 10:13:54",
+  "strategy": "structured",
+  "chunk_max_words": 120,
+  "overlap": 20,
+  "embedder_model": "BAAI/bge-small-en-v1.5",
+  "embedder_backend": "fastembed",
+  "dim": 384,
+  "index_type": "flat",
+  "n_chunks": 112,
+  "n_cards": 19,
+  "docs": {
+    "cotton": "da822bd1eb7d25f7c0c01cd3c161f7d7bd55a510bd9f63eef0c469cf843821d5",
+    "general_guidance": "db2fc0969926143f9f125cc0b1a0a7188207206d33699394a4c1b2eb920825cb",
+    "groundnut": "f973ef7335246a33138f6f378aeab36467cdb3e20156049a244592093dbda8b0",
+    "rice": "7a5d4514e6ac60694bfaef76e013b69dde6b238c1db380d76d7671e41877360b",
+    "sugarcane": "25a70e650731a2d57d5a8703496556be2f07a421b8357b3413210843d64d1d16",
+    "tomato": "a2394b377ba08bf1d5145cfb0e031853efd874779a026b461d7128ab5d04537c",
+    "wheat": "a601bdd1a808e01a0c05daa67dcbfd380ec34fbd9d84bbaaebf4d3e67245a941"
+  },
+  "kb_version": "ad3be9cfa693"
+}

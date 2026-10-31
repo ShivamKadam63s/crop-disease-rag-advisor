@@ -1,0 +1,183 @@
+[
+  {
+    "crop": "Cotton",
+    "disease": "Pink bollworm",
+    "card_id": "cotton-pink-bollworm",
+    "aliases": [
+      "PBW",
+      "Pectinophora gossypiella",
+      "pink boll worm",
+      "gulabi sundi"
+    ]
+  },
+  {
+    "crop": "Cotton",
+    "disease": "Cotton bacterial blight",
+    "card_id": "cotton-cotton-bacterial-blight",
+    "aliases": [
+      "angular leaf spot",
+      "black arm",
+      "Xanthomonas blight of cotton"
+    ]
+  },
+  {
+    "crop": "Groundnut",
+    "disease": "Tikka leaf spot",
+    "card_id": "groundnut-tikka-leaf-spot",
+    "aliases": [
+      "tikka disease",
+      "early and late leaf spot",
+      "Cercospora leaf spot",
+      "groundnut leaf spot"
+    ]
+  },
+  {
+    "crop": "Groundnut",
+    "disease": "Groundnut rust",
+    "card_id": "groundnut-groundnut-rust",
+    "aliases": [
+      "rust of groundnut",
+      "Puccinia arachidis"
+    ]
+  },
+  {
+    "crop": "Rice",
+    "disease": "Rice blast",
+    "card_id": "rice-rice-blast",
+    "aliases": [
+      "blast",
+      "neck blast",
+      "leaf blast",
+      "Magnaporthe blast"
+    ]
+  },
+  {
+    "crop": "Rice",
+    "disease": "Bacterial leaf blight",
+    "card_id": "rice-bacterial-leaf-blight",
+    "aliases": [
+      "BLB",
+      "kresek",
+      "Xanthomonas blight",
+      "bacterial blight of rice"
+    ]
+  },
+  {
+    "crop": "Rice",
+    "disease": "Sheath blight",
+    "card_id": "rice-sheath-blight",
+    "aliases": [
+      "Rhizoctonia sheath blight",
+      "banded blight"
+    ]
+  },
+  {
+    "crop": "Rice",
+    "disease": "Brown spot",
+    "card_id": "rice-brown-spot",
+    "aliases": [
+      "Helminthosporium leaf spot",
+      "Bipolaris brown spot",
+      "sesame leaf spot of rice"
+    ]
+  },
+  {
+    "crop": "Sugarcane",
+    "disease": "Red rot",
+    "card_id": "sugarcane-red-rot",
+    "aliases": [
+      "Colletotrichum falcatum red rot",
+      "red rot of sugarcane"
+    ]
+  },
+  {
+    "crop": "Sugarcane",
+    "disease": "Smut",
+    "card_id": "sugarcane-smut",
+    "aliases": [
+      "sugarcane smut",
+      "whip smut",
+      "Sporisorium scitamineum"
+    ]
+  },
+  {
+    "crop": "Tomato",
+    "disease": "Early blight",
+    "card_id": "tomato-early-blight",
+    "aliases": [
+      "Alternaria leaf spot",
+      "target spot",
+      "early blight of tomato"
+    ]
+  },
+  {
+    "crop": "Tomato",
+    "disease": "Late blight",
+    "card_id": "tomato-late-blight",
+    "aliases": [
+      "Phytophthora blight",
+      "late blight of tomato"
+    ]
+  },
+  {
+    "crop": "Tomato",
+    "disease": "Tomato leaf curl virus",
+    "card_id": "tomato-tomato-leaf-curl-virus",
+    "aliases": [
+      "ToLCV",
+      "leaf curl",
+      "tomato leaf curl disease",
+      "begomovirus"
+    ]
+  },
+  {
+    "crop": "Tomato",
+    "disease": "Bacterial wilt",
+    "card_id": "tomato-bacterial-wilt",
+    "aliases": [
+      "Ralstonia wilt",
+      "southern wilt",
+      "bacterial wilt of tomato"
+    ]
+  },
+  {
+    "crop": "Wheat",
+    "disease": "Yellow rust",
+    "card_id": "wheat-yellow-rust",
+    "aliases": [
+      "stripe rust",
+      "Puccinia striiformis",
+      "yellow stripe rust"
+    ]
+  },
+  {
+    "crop": "Wheat",
+    "disease": "Leaf rust",
+    "card_id": "wheat-leaf-rust",
+    "aliases": [
+      "brown rust",
+      "Puccinia triticina",
+      "orange rust of wheat"
+    ]
+  },
+  {
+    "crop": "Wheat",
+    "disease": "Wheat powdery mildew",
+    "card_id": "wheat-wheat-powdery-mildew",
+    "aliases": [
+      "powdery mildew",
+      "Blumeria graminis",
+      "white mildew of wheat"
+    ]
+  },
+  {
+    "crop": "Wheat",
+    "disease": "Karnal bunt",
+    "card_id": "wheat-karnal-bunt",
+    "aliases": [
+      "partial bunt",
+      "Tilletia indica",
+      "kernel bunt"
+    ]
+  }
+]

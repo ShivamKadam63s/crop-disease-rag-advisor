@@ -1,0 +1,838 @@
+[
+  {
+    "card_id": "cotton-pink-bollworm",
+    "crop": "Cotton",
+    "disease": "Pink bollworm",
+    "type": "pest",
+    "aliases": [
+      "PBW",
+      "Pectinophora gossypiella",
+      "pink boll worm",
+      "gulabi sundi"
+    ],
+    "pathogen": "Pectinophora gossypiella (moth larva)",
+    "fields": {
+      "symptoms": {
+        "text": "flowers do not open fully and look twisted like a rosette; small entry holes on green bolls; pinkish caterpillars inside bolls feeding on seeds; locules are webbed together and cotton lint is stained; bolls open prematurely and seeds are damaged",
+        "start": 358,
+        "end": 603
+      },
+      "favorable_conditions": {
+        "text": "long duration crop, late sowing, continuous cotton and left over crop residue and stalks",
+        "start": 626,
+        "end": 714
+      },
+      "cultural_control": {
+        "text": "Install pheromone traps to monitor moths. Sow on time with short duration varieties and destroy crop residue and stalks after the last picking. Avoid ratoon cotton.",
+        "start": 733,
+        "end": 897
+      },
+      "biological_control": {
+        "text": "Release of egg parasitoid Trichogramma and use of mating disruption are used in integrated management.",
+        "start": 918,
+        "end": 1020
+      },
+      "chemical_control": {
+        "text": "Insecticides are used only when pest level crosses the threshold as per local recommendation. Follow the product label for dose and spray interval.",
+        "start": 1039,
+        "end": 1186
+      }
+    },
+    "doc_id": "cotton",
+    "doc_path": "data/raw_docs/cotton.md",
+    "source_title": "AgriAdvisor seed card - Cotton (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "cotton-cotton-bacterial-blight",
+    "crop": "Cotton",
+    "disease": "Cotton bacterial blight",
+    "type": "disease",
+    "aliases": [
+      "angular leaf spot",
+      "black arm",
+      "Xanthomonas blight of cotton"
+    ],
+    "pathogen": "Xanthomonas citri pv. malvacearum (bacterium)",
+    "fields": {
+      "symptoms": {
+        "text": "angular water soaked spots on leaves limited by the veins that turn brown; spots join and leaves dry and fall; black lesions on the stem and leaf stalk called black arm; dark greasy spots on bolls and boll rot; seedlings may get small spots on seed leaves",
+        "start": 1363,
+        "end": 1618
+      },
+      "favorable_conditions": {
+        "text": "warm wet weather, rain splash and infected seed or residue",
+        "start": 1641,
+        "end": 1699
+      },
+      "cultural_control": {
+        "text": "Use acid delinted certified seed and resistant varieties. Destroy infected crop residue and avoid working in the wet field.",
+        "start": 1718,
+        "end": 1841
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 1862,
+        "end": 1895
+      },
+      "chemical_control": {
+        "text": "Copper based sprays are used as per local recommendation. Follow the product label for dose and spray interval.",
+        "start": 1914,
+        "end": 2025
+      }
+    },
+    "doc_id": "cotton",
+    "doc_path": "data/raw_docs/cotton.md",
+    "source_title": "AgriAdvisor seed card - Cotton (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "general-guidance-pesticide-safety",
+    "crop": "General guidance",
+    "disease": "Pesticide safety",
+    "type": "guidance",
+    "aliases": [
+      "pesticide safety",
+      "spraying safety"
+    ],
+    "pathogen": "not applicable",
+    "fields": {
+      "symptoms": {
+        "text": "not applicable",
+        "start": 295,
+        "end": 309
+      },
+      "favorable_conditions": {
+        "text": "not applicable",
+        "start": 332,
+        "end": 346
+      },
+      "cultural_control": {
+        "text": "Use only pesticides registered for the crop and read the label before every spray. Wear gloves, mask and full clothing, do not spray against the wind, and keep the pre harvest interval written on the label.",
+        "start": 365,
+        "end": 571
+      },
+      "biological_control": {
+        "text": "Prefer scouting, resistant varieties and bio-pesticides where they are recommended.",
+        "start": 592,
+        "end": 675
+      },
+      "chemical_control": {
+        "text": "Doses depend on the product, crop stage and spray volume, so always follow the label of the registered product and the advice of the local agriculture officer or Krishi Vigyan Kendra.",
+        "start": 694,
+        "end": 877
+      }
+    },
+    "doc_id": "general_guidance",
+    "doc_path": "data/raw_docs/general_guidance.md",
+    "source_title": "AgriAdvisor seed card - Pesticide safety and getting help (drafted from general guidance; verify locally)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "groundnut-tikka-leaf-spot",
+    "crop": "Groundnut",
+    "disease": "Tikka leaf spot",
+    "type": "disease",
+    "aliases": [
+      "tikka disease",
+      "early and late leaf spot",
+      "Cercospora leaf spot",
+      "groundnut leaf spot"
+    ],
+    "pathogen": "Cercospora arachidicola and Nothopassalora personata (fungi)",
+    "fields": {
+      "symptoms": {
+        "text": "dark brown to black round spots on leaflets; a yellow ring around the spots on the upper surface; spots on the underside look darker; many spots join and leaves dry and drop; severe leaf fall leaves bare stems and pod yield is reduced",
+        "start": 415,
+        "end": 649
+      },
+      "favorable_conditions": {
+        "text": "humid and rainy weather, continuous groundnut and infected crop residue",
+        "start": 672,
+        "end": 743
+      },
+      "cultural_control": {
+        "text": "Rotate with cereals and remove or deep bury crop residue. Use tolerant varieties and treated seed and avoid very dense sowing.",
+        "start": 762,
+        "end": 888
+      },
+      "biological_control": {
+        "text": "Seed treatment with Trichoderma products may reduce early infection.",
+        "start": 909,
+        "end": 977
+      },
+      "chemical_control": {
+        "text": "Protective fungicides such as chlorothalonil or mancozeb are commonly recommended. Follow the product label for dose and spray interval.",
+        "start": 996,
+        "end": 1132
+      }
+    },
+    "doc_id": "groundnut",
+    "doc_path": "data/raw_docs/groundnut.md",
+    "source_title": "AgriAdvisor seed card - Groundnut (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "groundnut-groundnut-rust",
+    "crop": "Groundnut",
+    "disease": "Groundnut rust",
+    "type": "disease",
+    "aliases": [
+      "rust of groundnut",
+      "Puccinia arachidis"
+    ],
+    "pathogen": "Puccinia arachidis (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "orange brown powdery pustules mainly on the underside of leaflets; brown spots show on the upper side of the same leaves; leaves dry up and drop early; rust powder comes off on the hand; spreads quickly in wind from field to field",
+        "start": 1261,
+        "end": 1491
+      },
+      "favorable_conditions": {
+        "text": "humid weather with dew and wind borne spores from nearby volunteer plants",
+        "start": 1514,
+        "end": 1587
+      },
+      "cultural_control": {
+        "text": "Use tolerant varieties and remove volunteer groundnut plants. Avoid growing groundnut continuously and sow at the recommended time.",
+        "start": 1606,
+        "end": 1737
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 1758,
+        "end": 1791
+      },
+      "chemical_control": {
+        "text": "Fungicides such as chlorothalonil or triazole products are recommended when rust starts. Follow the product label for dose and spray interval.",
+        "start": 1810,
+        "end": 1952
+      }
+    },
+    "doc_id": "groundnut",
+    "doc_path": "data/raw_docs/groundnut.md",
+    "source_title": "AgriAdvisor seed card - Groundnut (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "rice-rice-blast",
+    "crop": "Rice",
+    "disease": "Rice blast",
+    "type": "disease",
+    "aliases": [
+      "blast",
+      "neck blast",
+      "leaf blast",
+      "Magnaporthe blast"
+    ],
+    "pathogen": "Magnaporthe oryzae (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "spindle shaped or diamond shaped spots with grey centre and brown edge on leaves; many spots join and whole leaves dry up; neck of the panicle turns black and breaks; panicles stay white and empty; seedlings in nursery get burnt look",
+        "start": 333,
+        "end": 566
+      },
+      "favorable_conditions": {
+        "text": "high humidity, cool nights, long dew period and heavy nitrogen fertilizer",
+        "start": 589,
+        "end": 662
+      },
+      "cultural_control": {
+        "text": "Use resistant varieties and treated seed. Apply nitrogen in split doses and avoid excess. Keep the field and bunds free of weeds and use balanced fertilizer.",
+        "start": 681,
+        "end": 838
+      },
+      "biological_control": {
+        "text": "Seed treatment with Pseudomonas fluorescens can lower infection.",
+        "start": 859,
+        "end": 923
+      },
+      "chemical_control": {
+        "text": "Systemic fungicides such as tricyclazole are commonly used at tillering and booting as per recommendation. Follow the product label for dose and spray interval.",
+        "start": 942,
+        "end": 1102
+      }
+    },
+    "doc_id": "rice",
+    "doc_path": "data/raw_docs/rice.md",
+    "source_title": "AgriAdvisor seed card - Rice (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "rice-bacterial-leaf-blight",
+    "crop": "Rice",
+    "disease": "Bacterial leaf blight",
+    "type": "disease",
+    "aliases": [
+      "BLB",
+      "kresek",
+      "Xanthomonas blight",
+      "bacterial blight of rice"
+    ],
+    "pathogen": "Xanthomonas oryzae pv. oryzae (bacterium)",
+    "fields": {
+      "symptoms": {
+        "text": "water soaked yellow to white stripes start from the leaf tip and edges; stripes turn straw coloured with wavy margin and the leaf dries; milky or yellow bacterial ooze drops on young leaves in the morning; young seedlings wilt and die which is called kresek; disease shows after flooding and storms",
+        "start": 1272,
+        "end": 1570
+      },
+      "favorable_conditions": {
+        "text": "heavy rain, strong wind, flooded fields, injured leaves and excess nitrogen",
+        "start": 1593,
+        "end": 1668
+      },
+      "cultural_control": {
+        "text": "Plant resistant varieties and use clean seed. Avoid excess nitrogen and drain the field during severe disease. Avoid clipping seedling tips at transplanting and do not let water flow from infected fields.",
+        "start": 1687,
+        "end": 1891
+      },
+      "biological_control": {
+        "text": "Seed treatment with Pseudomonas fluorescens may reduce early infection.",
+        "start": 1912,
+        "end": 1983
+      },
+      "chemical_control": {
+        "text": "Chemical options are limited. Follow local agriculture officer recommendation and the product label.",
+        "start": 2002,
+        "end": 2102
+      }
+    },
+    "doc_id": "rice",
+    "doc_path": "data/raw_docs/rice.md",
+    "source_title": "AgriAdvisor seed card - Rice (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "rice-sheath-blight",
+    "crop": "Rice",
+    "disease": "Sheath blight",
+    "type": "disease",
+    "aliases": [
+      "Rhizoctonia sheath blight",
+      "banded blight"
+    ],
+    "pathogen": "Rhizoctonia solani (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "oval greenish grey water soaked spots on the leaf sheath near the water line; spots enlarge with brown border and a snake skin pattern; lesions climb up the plant to the flag leaf; plants in dense patches lodge and have poor grain filling; small round sclerotia float on water in the field",
+        "start": 2233,
+        "end": 2522
+      },
+      "favorable_conditions": {
+        "text": "dense planting, high nitrogen, high humidity and warm weather",
+        "start": 2545,
+        "end": 2606
+      },
+      "cultural_control": {
+        "text": "Use wider spacing and avoid excess nitrogen. Remove weeds and crop debris and drain water at times to reduce humidity inside the canopy.",
+        "start": 2625,
+        "end": 2761
+      },
+      "biological_control": {
+        "text": "Trichoderma or Pseudomonas based products can be used as per recommendation.",
+        "start": 2782,
+        "end": 2858
+      },
+      "chemical_control": {
+        "text": "Fungicides such as validamycin or hexaconazole are commonly recommended. Follow the product label for dose and spray interval.",
+        "start": 2877,
+        "end": 3003
+      }
+    },
+    "doc_id": "rice",
+    "doc_path": "data/raw_docs/rice.md",
+    "source_title": "AgriAdvisor seed card - Rice (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "rice-brown-spot",
+    "crop": "Rice",
+    "disease": "Brown spot",
+    "type": "disease",
+    "aliases": [
+      "Helminthosporium leaf spot",
+      "Bipolaris brown spot",
+      "sesame leaf spot of rice"
+    ],
+    "pathogen": "Bipolaris oryzae (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "small oval brown spots with grey centre and dark brown margin on leaves; similar dark spots on the grain husk; seedlings get blighted in nursery; spots look like sesame seeds scattered on leaves; plants in poor soil look weak and spots are many",
+        "start": 3163,
+        "end": 3407
+      },
+      "favorable_conditions": {
+        "text": "nutrient poor soil especially low potassium or nitrogen, water stress and warm humid weather",
+        "start": 3430,
+        "end": 3522
+      },
+      "cultural_control": {
+        "text": "Use treated healthy seed and apply balanced fertilizer including potash. Keep proper water in the field and avoid drought stress.",
+        "start": 3541,
+        "end": 3670
+      },
+      "biological_control": {
+        "text": "Seed treatment with Trichoderma or Pseudomonas products may help.",
+        "start": 3691,
+        "end": 3756
+      },
+      "chemical_control": {
+        "text": "Protective fungicides such as mancozeb are used as per recommendation. Follow the product label for dose and spray interval.",
+        "start": 3775,
+        "end": 3899
+      }
+    },
+    "doc_id": "rice",
+    "doc_path": "data/raw_docs/rice.md",
+    "source_title": "AgriAdvisor seed card - Rice (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "sugarcane-red-rot",
+    "crop": "Sugarcane",
+    "disease": "Red rot",
+    "type": "disease",
+    "aliases": [
+      "Colletotrichum falcatum red rot",
+      "red rot of sugarcane"
+    ],
+    "pathogen": "Colletotrichum falcatum (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "top leaves droop and dry from the leaf edges; reddish dark spots on the midrib of leaves; stalk split lengthwise shows red inside with white cross bands; sour alcohol smell comes from the cut stalk; whole clump dries and stalk becomes hollow and shrunken",
+        "start": 350,
+        "end": 604
+      },
+      "favorable_conditions": {
+        "text": "infected seed pieces, waterlogging, monsoon rains and ratooning of an infected crop",
+        "start": 627,
+        "end": 710
+      },
+      "cultural_control": {
+        "text": "Use disease free seed setts and resistant varieties. Uproot and destroy infected clumps and avoid ratooning an infected field. Treat setts before planting and follow crop rotation.",
+        "start": 729,
+        "end": 909
+      },
+      "biological_control": {
+        "text": "Trichoderma applied to the seed setts and soil can lower the disease.",
+        "start": 930,
+        "end": 999
+      },
+      "chemical_control": {
+        "text": "There is no curative spray. Sett treatment with recommended fungicides is advised. Follow the product label and local recommendation.",
+        "start": 1018,
+        "end": 1151
+      }
+    },
+    "doc_id": "sugarcane",
+    "doc_path": "data/raw_docs/sugarcane.md",
+    "source_title": "AgriAdvisor seed card - Sugarcane (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "sugarcane-smut",
+    "crop": "Sugarcane",
+    "disease": "Smut",
+    "type": "disease",
+    "aliases": [
+      "sugarcane smut",
+      "whip smut",
+      "Sporisorium scitamineum"
+    ],
+    "pathogen": "Sporisorium scitamineum (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "a black whip like structure comes out from the top of the shoot; the whip is covered with a silvery thin skin that breaks and releases black powder; plants have many thin grassy tillers; affected canes are thin and stunted; ratoon crops show more whips",
+        "start": 1288,
+        "end": 1540
+      },
+      "favorable_conditions": {
+        "text": "infected seed setts, dry weather and ratoon crops",
+        "start": 1563,
+        "end": 1612
+      },
+      "cultural_control": {
+        "text": "Use healthy setts and resistant varieties. Cover the whips with a bag, cut them and destroy them and uproot affected clumps. Hot water treatment of setts is advised.",
+        "start": 1631,
+        "end": 1796
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 1817,
+        "end": 1850
+      },
+      "chemical_control": {
+        "text": "Fungicide treatment of setts is recommended before planting. Follow the product label and local recommendation.",
+        "start": 1869,
+        "end": 1980
+      }
+    },
+    "doc_id": "sugarcane",
+    "doc_path": "data/raw_docs/sugarcane.md",
+    "source_title": "AgriAdvisor seed card - Sugarcane (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "tomato-early-blight",
+    "crop": "Tomato",
+    "disease": "Early blight",
+    "type": "disease",
+    "aliases": [
+      "Alternaria leaf spot",
+      "target spot",
+      "early blight of tomato"
+    ],
+    "pathogen": "Alternaria solani (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "brown spots with concentric rings like a target board on older lower leaves; yellow patch around the leaf spots and leaves dry up and fall; dark sunken spots on the stem near the soil; dark leathery spots near the stalk end of the fruit; disease starts on lower leaves and moves upward",
+        "start": 347,
+        "end": 632
+      },
+      "favorable_conditions": {
+        "text": "warm weather with alternating dry and humid spells, dew, plant stress and poor nutrition",
+        "start": 655,
+        "end": 743
+      },
+      "cultural_control": {
+        "text": "Remove and destroy infected leaves and crop debris. Rotate with non-solanaceous crops. Avoid overhead irrigation and keep plants spaced and staked for airflow.",
+        "start": 762,
+        "end": 921
+      },
+      "biological_control": {
+        "text": "Seed or soil treatment with Trichoderma based products can reduce early infection.",
+        "start": 942,
+        "end": 1024
+      },
+      "chemical_control": {
+        "text": "Protective fungicides such as mancozeb, chlorothalonil or copper-based products are commonly used. Follow the product label for dose and spray interval.",
+        "start": 1043,
+        "end": 1195
+      }
+    },
+    "doc_id": "tomato",
+    "doc_path": "data/raw_docs/tomato.md",
+    "source_title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "tomato-late-blight",
+    "crop": "Tomato",
+    "disease": "Late blight",
+    "type": "disease",
+    "aliases": [
+      "Phytophthora blight",
+      "late blight of tomato"
+    ],
+    "pathogen": "Phytophthora infestans (oomycete)",
+    "fields": {
+      "symptoms": {
+        "text": "large water soaked greasy dark patches on leaves that turn brown quickly; white downy fungal growth on the underside of leaves in humid mornings; dark brown firm blotches on green fruit; black lesions on stems and the whole plant collapses within days; spreads very fast in cool cloudy wet weather",
+        "start": 1332,
+        "end": 1629
+      },
+      "favorable_conditions": {
+        "text": "cool temperatures, high humidity, cloudy and rainy weather with long leaf wetness",
+        "start": 1652,
+        "end": 1733
+      },
+      "cultural_control": {
+        "text": "Destroy infected plants and volunteer plants. Avoid leaf wetness by drip irrigation and wide spacing. Use tolerant varieties where available.",
+        "start": 1752,
+        "end": 1893
+      },
+      "biological_control": {
+        "text": "No dependable biological control; rely on prevention and sanitation.",
+        "start": 1914,
+        "end": 1982
+      },
+      "chemical_control": {
+        "text": "Protective sprays such as mancozeb or copper oxychloride are used before infection, and systemic mixtures containing metalaxyl may be used as per label. Follow the product label for dose and spray interval.",
+        "start": 2001,
+        "end": 2207
+      }
+    },
+    "doc_id": "tomato",
+    "doc_path": "data/raw_docs/tomato.md",
+    "source_title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "tomato-tomato-leaf-curl-virus",
+    "crop": "Tomato",
+    "disease": "Tomato leaf curl virus",
+    "type": "disease",
+    "aliases": [
+      "ToLCV",
+      "leaf curl",
+      "tomato leaf curl disease",
+      "begomovirus"
+    ],
+    "pathogen": "Tomato leaf curl begomovirus spread by whitefly",
+    "fields": {
+      "symptoms": {
+        "text": "leaves curl upward and become small and crinkled; veins look thick and leaves feel leathery; plants stay stunted and bushy; flowers drop and very few fruits set; whiteflies are seen on the underside of leaves",
+        "start": 2382,
+        "end": 2590
+      },
+      "favorable_conditions": {
+        "text": "warm dry weather with high whitefly population, early infection in nursery",
+        "start": 2613,
+        "end": 2687
+      },
+      "cultural_control": {
+        "text": "Raise seedlings under insect proof net. Uproot and destroy infected plants early. Use yellow sticky traps and remove weeds that host whitefly. There is no cure for infected plants.",
+        "start": 2706,
+        "end": 2886
+      },
+      "biological_control": {
+        "text": "Neem based sprays and other bio-pesticides can reduce whitefly numbers.",
+        "start": 2907,
+        "end": 2978
+      },
+      "chemical_control": {
+        "text": "Insecticides such as imidacloprid may be used against whitefly vectors as per label. Follow the product label for dose and spray interval.",
+        "start": 2997,
+        "end": 3135
+      }
+    },
+    "doc_id": "tomato",
+    "doc_path": "data/raw_docs/tomato.md",
+    "source_title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "tomato-bacterial-wilt",
+    "crop": "Tomato",
+    "disease": "Bacterial wilt",
+    "type": "disease",
+    "aliases": [
+      "Ralstonia wilt",
+      "southern wilt",
+      "bacterial wilt of tomato"
+    ],
+    "pathogen": "Ralstonia solanacearum (bacterium)",
+    "fields": {
+      "symptoms": {
+        "text": "sudden wilting of green plants in the daytime without yellowing; plants may look fine at night at first but later wilt permanently; brown discoloration inside the cut stem; cut stem placed in clear water gives milky white streaming ooze; wilting begins in a few plants and spreads along the field",
+        "start": 3289,
+        "end": 3585
+      },
+      "favorable_conditions": {
+        "text": "warm wet soil, poorly drained fields and infested soil",
+        "start": 3608,
+        "end": 3662
+      },
+      "cultural_control": {
+        "text": "Rotate with cereals or other non-solanaceous crops. Use well drained raised beds and resistant varieties or rootstocks. Remove wilted plants with the root soil. There is no effective curative spray.",
+        "start": 3681,
+        "end": 3879
+      },
+      "biological_control": {
+        "text": "Soil amendments with organic matter and antagonistic bacteria can help in reducing the disease pressure.",
+        "start": 3900,
+        "end": 4004
+      },
+      "chemical_control": {
+        "text": "No chemical treatment reliably cures bacterial wilt. Follow local agriculture officer advice and the product label.",
+        "start": 4023,
+        "end": 4138
+      }
+    },
+    "doc_id": "tomato",
+    "doc_path": "data/raw_docs/tomato.md",
+    "source_title": "AgriAdvisor seed card - Tomato (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "wheat-yellow-rust",
+    "crop": "Wheat",
+    "disease": "Yellow rust",
+    "type": "disease",
+    "aliases": [
+      "stripe rust",
+      "Puccinia striiformis",
+      "yellow stripe rust"
+    ],
+    "pathogen": "Puccinia striiformis (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "yellow to orange powdery pustules arranged in stripes along the leaf veins; yellow powder rubs off on fingers and clothes; leaves turn yellow and dry early; disease appears in patches in the field in cool weather; stripes may also be seen on the ear glumes",
+        "start": 343,
+        "end": 599
+      },
+      "favorable_conditions": {
+        "text": "cool weather around 10 to 15 degrees Celsius with dew, fog or light rain",
+        "start": 622,
+        "end": 694
+      },
+      "cultural_control": {
+        "text": "Grow resistant varieties and scout the field regularly from early stage. Avoid late and excess nitrogen and destroy volunteer wheat plants.",
+        "start": 713,
+        "end": 852
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 873,
+        "end": 906
+      },
+      "chemical_control": {
+        "text": "Triazole fungicides such as propiconazole are sprayed promptly after the first patches appear. Follow the product label for dose and spray interval.",
+        "start": 925,
+        "end": 1073
+      }
+    },
+    "doc_id": "wheat",
+    "doc_path": "data/raw_docs/wheat.md",
+    "source_title": "AgriAdvisor seed card - Wheat (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "wheat-leaf-rust",
+    "crop": "Wheat",
+    "disease": "Leaf rust",
+    "type": "disease",
+    "aliases": [
+      "brown rust",
+      "Puccinia triticina",
+      "orange rust of wheat"
+    ],
+    "pathogen": "Puccinia triticina (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "small round orange brown pustules scattered randomly on the upper surface of leaves; pustules are not in lines like stripe rust; orange powder comes off on touching; heavily infected leaves dry and grain gets shrivelled; disease is seen in warmer weather late in the season",
+        "start": 1212,
+        "end": 1485
+      },
+      "favorable_conditions": {
+        "text": "moderate warm temperature around 15 to 25 degrees Celsius with leaf wetness",
+        "start": 1508,
+        "end": 1583
+      },
+      "cultural_control": {
+        "text": "Use resistant varieties and sow at the recommended time. Remove volunteer plants and avoid excess nitrogen.",
+        "start": 1602,
+        "end": 1709
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 1730,
+        "end": 1763
+      },
+      "chemical_control": {
+        "text": "Fungicides such as propiconazole or tebuconazole are used as per recommendation. Follow the product label for dose and spray interval.",
+        "start": 1782,
+        "end": 1916
+      }
+    },
+    "doc_id": "wheat",
+    "doc_path": "data/raw_docs/wheat.md",
+    "source_title": "AgriAdvisor seed card - Wheat (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "wheat-wheat-powdery-mildew",
+    "crop": "Wheat",
+    "disease": "Wheat powdery mildew",
+    "type": "disease",
+    "aliases": [
+      "powdery mildew",
+      "Blumeria graminis",
+      "white mildew of wheat"
+    ],
+    "pathogen": "Blumeria graminis f. sp. tritici (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "white to grey powdery fungal growth on leaves and stems that can be wiped off; patches of white powder on lower leaves first; later small black dots appear in the old patches; leaves turn yellow and dry in thick crop; dense lush crop shows more disease",
+        "start": 2084,
+        "end": 2336
+      },
+      "favorable_conditions": {
+        "text": "cool humid weather, dense crop and high nitrogen",
+        "start": 2359,
+        "end": 2407
+      },
+      "cultural_control": {
+        "text": "Use resistant varieties and avoid dense sowing and excess nitrogen. Remove weeds and volunteer plants.",
+        "start": 2426,
+        "end": 2528
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 2549,
+        "end": 2582
+      },
+      "chemical_control": {
+        "text": "Wettable sulphur or triazole fungicides are used as per recommendation. Follow the product label for dose and spray interval.",
+        "start": 2601,
+        "end": 2726
+      }
+    },
+    "doc_id": "wheat",
+    "doc_path": "data/raw_docs/wheat.md",
+    "source_title": "AgriAdvisor seed card - Wheat (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  },
+  {
+    "card_id": "wheat-karnal-bunt",
+    "crop": "Wheat",
+    "disease": "Karnal bunt",
+    "type": "disease",
+    "aliases": [
+      "partial bunt",
+      "Tilletia indica",
+      "kernel bunt"
+    ],
+    "pathogen": "Tilletia indica (fungus)",
+    "fields": {
+      "symptoms": {
+        "text": "some grains in the ear are partly changed into black powder; broken grains smell like rotten fish; only a few grains in an ear are affected and the rest look normal; black powder is seen at the grain furrow and spills on threshing; disease is seen only at harvest and not on the leaves",
+        "start": 2854,
+        "end": 3139
+      },
+      "favorable_conditions": {
+        "text": "cloudy, rainy and humid weather at flowering and ear emergence",
+        "start": 3162,
+        "end": 3224
+      },
+      "cultural_control": {
+        "text": "Use certified clean seed and resistant varieties. Avoid irrigation at flowering in cloudy weather and rotate crops.",
+        "start": 3243,
+        "end": 3358
+      },
+      "biological_control": {
+        "text": "No dependable biological control.",
+        "start": 3379,
+        "end": 3412
+      },
+      "chemical_control": {
+        "text": "A fungicide spray such as propiconazole at flowering is recommended in affected areas. Follow the product label for dose and timing.",
+        "start": 3431,
+        "end": 3563
+      }
+    },
+    "doc_id": "wheat",
+    "doc_path": "data/raw_docs/wheat.md",
+    "source_title": "AgriAdvisor seed card - Wheat (drafted from general agronomic knowledge; verify against ICAR / state agricultural university bulletins)",
+    "source_url": "",
+    "license": "project seed content"
+  }
+]
