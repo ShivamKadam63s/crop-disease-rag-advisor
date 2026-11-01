@@ -45,7 +45,7 @@ decision:
   max_retries: 1
   escalate_variant: null      # e.g. groq_gptoss to escalate on retry
 fallback:
-  helpline: "Kisan Call Centre 1800-180-1551 (toll-free) - please verify the current number before release"
+  helpline: "Kisan Call Centre 1800-180-1551 (toll-free)"
 cost:                          # EDIT to current prices
   gpu_usd_per_hour: 0.35
   llm_usd_per_mtok_in: 0.10
