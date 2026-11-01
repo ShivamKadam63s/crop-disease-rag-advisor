@@ -8,6 +8,12 @@ for k in ("LLM_API_KEY", "LLM_BASE_URL", "LLM_MODEL"):
     try:
         if k in st.secrets: os.environ[k] = str(st.secrets[k])
     except Exception: pass
+# Streamlit Cloud hot-reloads only this file after a git pull: modules imported earlier (agri.*) would stay stale and break imports.
+# Fingerprint the code and, when it changed, drop the cached agri modules and the cached pipeline.
+_fp = max(p.stat().st_mtime for p in (ROOT / "agri").rglob("*.py")) + max(p.stat().st_mtime for p in (ROOT / "configs").glob("*")) + (ROOT / "data/glossary.json").stat().st_mtime
+if getattr(sys, "_agri_fp", None) != _fp:
+    for _m in [m for m in sys.modules if m == "agri" or m.startswith("agri.")]: del sys.modules[_m]
+    sys._agri_fp = _fp; st.cache_resource.clear()
 from agri.config import load_config, load_variants
 from agri.orchestrator.lang import LANGS
 from agri.prompts.builder import MODES
