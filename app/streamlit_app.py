@@ -34,6 +34,70 @@ def highlighted(text, start, end):
     if start is None or end is None: return html.escape(text).replace("\n", "<br>")
     return (html.escape(text[:start]) + "<mark>" + html.escape(text[start:end]) + "</mark>" + html.escape(text[end:])).replace("\n", "<br>")
 
+WORKFLOW_LABELS = {
+    "start": "Question received", "prep": "Prepare query", "guard": "Scope and intent",
+    "info": "Condition lookup", "retrieve": "Retrieve evidence", "draft": "Draft answer",
+    "review": "Evidence and safety review", "retry": "Retry with stricter search",
+    "accept": "Accept answer", "localize": "Translate answer", "fallback_oos": "Fallback: out of scope",
+    "fallback_dose": "Fallback: dose", "fallback_insufficient": "Fallback: insufficient evidence",
+    "fallback_error": "Fallback: service error", "fallback_need_crop": "Fallback: clarify crop", "end": "Return result",
+}
+FALLBACK_NODES = {"out_of_scope": "fallback_oos", "dose": "fallback_dose", "insufficient": "fallback_insufficient",
+                  "error": "fallback_error", "need_crop": "fallback_need_crop"}
+WORKFLOW_EDGES = [
+    ("start", "prep"), ("prep", "guard"), ("guard", "end"), ("guard", "info"), ("guard", "retrieve"),
+    ("info", "end"), ("retrieve", "draft"), ("retrieve", "retry"), ("retrieve", "fallback_dose"),
+    ("retrieve", "fallback_insufficient"), ("retrieve", "fallback_need_crop"), ("draft", "review"),
+    ("draft", "fallback_error"), ("review", "accept"), ("review", "retry"), ("review", "fallback_oos"),
+    ("review", "fallback_dose"), ("review", "fallback_insufficient"), ("retry", "retrieve"),
+    ("accept", "localize"), ("localize", "end"),
+    ("fallback_oos", "end"), ("fallback_dose", "end"), ("fallback_insufficient", "end"),
+    ("fallback_error", "end"), ("fallback_need_crop", "end"),
+]
+
+def workflow_diagram(res):
+    path = ["start"]
+    for event in res.get("trace") or []:
+        step = event.get("step")
+        if step == "fallback": step = FALLBACK_NODES.get(event.get("type"))
+        if step in WORKFLOW_LABELS and step not in ("start", "end", "accept", "localize"):
+            path.append(step)
+    if res.get("status") == "answered" and res.get("kind") != "info": path.extend(("accept", "localize"))
+    path.append("end")
+    active_nodes = set(path)
+    active_edges = set(zip(path, path[1:]))
+    nodes = []
+    for node, label in WORKFLOW_LABELS.items():
+        shape = "Mdiamond" if node in ("guard", "review") else "oval" if node in ("start", "end") else "box"
+        style = "rounded,filled" if shape == "box" else "filled"
+        fill, stroke, penwidth = "#f4f6f3", "#a9b5ad", "1.2"
+        if node in active_nodes:
+            fill, stroke, penwidth = "#d8f1e5", "#16825d", "2.5"
+        if node.startswith("fallback") and node in active_nodes:
+            fill, stroke = "#fff0df", "#c96a29"
+        nodes.append(f'  {node} [label="{label}", shape={shape}, style="{style}", fillcolor="{fill}", color="{stroke}", penwidth={penwidth}];')
+    edges = [f'  {source} -> {target} [color="{"#16825d" if (source, target) in active_edges else "#b8c2bc"}", penwidth={"2.5" if (source, target) in active_edges else "1.1"}];'
+             for source, target in WORKFLOW_EDGES]
+    dot = 'digraph workflow {\n  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.55", splines=ortho];\n  node [fontname="Arial", fontsize=10, margin="0.14,0.09"];\n  edge [arrowsize=0.7];\n'
+    dot += "\n".join(nodes + edges) + "\n}"
+    route = " -> ".join(WORKFLOW_LABELS[node] for node in path if node not in ("start", "end"))
+    return dot, route
+
+def workflow_toggle(rid):
+    open_graph = st.session_state.get("workflow_rid") == rid
+    if st.button("Hide workflow" if open_graph else "Workflow", icon=":material/account_tree:",
+                 help="Show the LangGraph workflow and this result's execution path", key=f"workflow_{rid}"):
+        st.session_state["workflow_rid"] = None if open_graph else rid
+
+def workflow_panel(res, rid):
+    if st.session_state.get("workflow_rid") != rid: return
+    dot, route = workflow_diagram(res)
+    with st.container(border=True):
+        st.markdown("#### LangGraph execution")
+        st.caption("Green nodes and arrows show this result's path. Other branches are possible routes.")
+        if route: st.caption("Route: " + route)
+        st.graphviz_chart(dot, use_container_width=True)
+
 def source_card(s, key):
     with st.container(border=True):
         st.markdown(f"**[{s['id']}] {s['crop']} · {s['disease'] or s['title']} · {s['section']}**")
@@ -166,7 +230,10 @@ with tab_adv:
         rid = st.session_state["rid"]
         if res["status"] == "answered":
             info = res.get("kind") == "info"
-            st.success(f"**Diseases of {res['crop']} linked to these conditions**" if info else f"**Likely problem: {res['diagnosis']}** ({res['crop']})")
+            title, action = st.columns([8, 1], vertical_alignment="center")
+            title.success(f"**Diseases of {res['crop']} linked to these conditions**" if info else f"**Likely problem: {res['diagnosis']}** ({res['crop']})")
+            with action: workflow_toggle(rid)
+            workflow_panel(res, rid)
             cf = res.get("confidence") or {}
             if cf.get("level") in ("high", "medium"):
                 badge = "🟢 Strong match" if cf["level"] == "high" else "🟡 Possible match, please confirm"
@@ -180,7 +247,10 @@ with tab_adv:
             st.subheader("Sources")
             for s_ in res["sources"]: source_card(s_, rid)
         else:
-            st.warning(res["message"])
+            message, action = st.columns([8, 1], vertical_alignment="center")
+            message.warning(res["message"])
+            with action: workflow_toggle(rid)
+            workflow_panel(res, rid)
         with st.expander("How this answer was produced (trace)"):
             st.write({"kb_version": res["kb_version"], "backend": res["variant"], "attempts": res["attempts"], "latency_ms": round(res["latency_ms"]), "review_reasons": res["reasons"]})
             st.json(res["trace"])
