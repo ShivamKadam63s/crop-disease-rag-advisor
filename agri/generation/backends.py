@@ -100,7 +100,7 @@ class OpenAICompat(Backend):
 
     def _call(self, messages, max_new_tokens):
         import requests
-        body = {"model": self.model, "messages": messages, "temperature": 0, "max_tokens": max(max_new_tokens, 2048}
+        body = {"model": self.model, "messages": messages, "temperature": 0, "max_tokens": max(max_new_tokens, 2048)}
         if self.effort: body["reasoning_effort"] = self.effort
         for attempt in range(8):
             try:
