@@ -94,3 +94,26 @@ API check: `uvicorn agri.service:app` then open `/docs` and call `/diagnose`.
 - `lora_merged_nf4` is unstable across training runs: it over-refused in 2 of 4 independent trainings (Kaggle n=15: refusal 73-93%; Kaggle batch full-size: test acc 0.36, refusal 61%) and was fine in the other 2 (Colab: test 0.75; Kaggle partial: test 0.81). Merging LoRA into a 4-bit model is therefore unreliable here; do not deploy it. qlora_nf4 was the best variant in all 4 runs (test 0.91-0.93 with RAG on).
 - No hosted-model (Groq) evaluation runs; the Groq key is used only for the live app.
 - Human evaluation: sheets in `results/human_eval/` need 2+ raters.
+
+## 10. Changes after the live-app review (2026-11-01)
+
+Guard and fallbacks (`agri/orchestrator/intent.py`, `fallback.py`): dose questions are recognised before the crop check (no crop named -> dose fallback);
+animal/human-health words force out-of-scope even next to a crop word; unsupported crops (apple, mango, banana, ...) get their own fallback with no
+"closest topics"; vague input ("my plant has spots") asks for the crop; the "please verify before release" note is gone from the helpline.
+Graph (`graph.py`): Hindi/Hinglish questions are translated to English before retrieval (hosted backends only); the answer can be rewritten in
+Hindi/Hinglish/Marathi (`lang.py`, rejected if the rewrite adds a number); "also consider" when a second disease scores within 0.03 of the diagnosis;
+no-crop questions whose two best diseases are from different crops ask for the crop; "which diseases are favoured by ..." is answered extractively from
+the Favorable-conditions chunks; a confidence badge (retrieval score vs the 0.70 gate) is returned with every answer.
+Answer styles: Quick (default, prompt unchanged), Detailed guide, Simple words, Prevention plan, Organic / low-chemical.
+App: question dropdown (28 test questions), photo upload (`agri/vision.py`: photo -> editable symptom text -> normal pipeline), report-a-problem feedback,
+Monitoring tab (health check, request table with latency/retries/metadata, CSV download). Logs live in `logs/` on the server and reset on redeploy.
+
+Re-run after every change (needs `LLM_API_KEY` in `.env` or the environment):
+
+```bash
+python -m tests.regression_live --variant llm_api     # 38 cases, exit code 1 on any failure
+python -m tests.regression_live --variant mock --offline   # guard-only, no key
+```
+
+Note: the guard and retrieval-tie check also run inside `--pipeline graph` evaluations, so graph numbers recorded before this change (results/kaggle_batch) describe the older guard.
+Vision model: `LLM_VISION_MODEL` (default tries qwen/qwen3.8-27b, then llama-4-scout on the same Groq key).

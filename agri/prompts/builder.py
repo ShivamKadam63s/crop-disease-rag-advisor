@@ -14,7 +14,22 @@ def labels_text(labels):
     for l in labels: by.setdefault(l["crop"], []).append(l["disease"])
     return "; ".join(f"{c}: {', '.join(d)}" for c, d in by.items())
 
-def system_prompt(labels, rag, strict=False):
+MODES = {
+    "quick": {"label": "Quick answer", "hint": "3-5 short lines", "tokens": None, "k": None, "support": 1.0, "directive": ""},
+    "detailed": {"label": "Detailed guide", "hint": "step-by-step: confirm, act now, cultural, biological, chemical (label only), prevention", "tokens": 700, "k": 5, "support": 0.8,
+                 "directive": ("Write a DETAILED step-by-step guide (about 8-14 short lines) inside \"advice\", using these labelled parts when the context supports them, separated by \" | \": "
+                               "What to confirm in the field | Do now | Cultural control | Biological control | Chemical control (name only what the context names; NO dose, follow the product label) | Prevention. "
+                               "Skip a part if the context has nothing for it.")},
+    "simple": {"label": "Simple words", "hint": "very short sentences, numbered steps", "tokens": 400, "k": None, "support": 0.9,
+               "directive": "Write \"advice\" in very simple words for a farmer with little schooling: 4-6 numbered steps (1. 2. 3.), each under 15 words, no technical terms."},
+    "prevention": {"label": "Prevention plan", "hint": "what to do before and next season", "tokens": 450, "k": 5, "support": 0.85,
+                   "directive": "Write \"advice\" as a PREVENTION and monitoring plan for the next crop or season (seed, field hygiene, water and fertilizer, early signs to scout for), only from the context."},
+    "organic": {"label": "Organic / low-chemical", "hint": "cultural + biological options only", "tokens": 450, "k": 5, "support": 0.85,
+                "directive": ("Write \"advice\" using ONLY cultural and biological control from the context. Do not recommend chemical sprays. "
+                              "If the context has no biological option, say so and suggest consulting the agriculture officer.")},
+}
+
+def system_prompt(labels, rag, strict=False, mode="quick"):
     s = ("You are a crop disease advisory assistant for farmers in India. You only diagnose diseases and pests of the crops listed below.\n"
          f"Known crops and diseases/pests (use these exact names): {labels_text(labels)}.\n\n"
          "Rules:\n"
@@ -27,8 +42,9 @@ def system_prompt(labels, rag, strict=False):
               "6. If the context is not enough to identify the problem, set diagnosis to INSUFFICIENT_CONTEXT.\n")
     else:
         s += "4. You have no reference documents, so \"citations\" must be an empty list [].\n"
+    if mode != "quick" and rag and mode in MODES: s += "\nOUTPUT STYLE: " + MODES[mode]["directive"] + " Keep it valid JSON on one line (no raw line breaks inside strings).\n"
     if strict:
-        s += ("\nYour previous answer was rejected by a checker. Be strict: keep advice to two short sentences copied from the cited passages, "
+        s += ("\nYour previous answer was rejected by a checker. Be strict: keep advice " + ("to two short sentences " if mode == "quick" else "short ") + "copied from the cited passages, "
               "cite only passages that name the same disease you diagnose, and use INSUFFICIENT_CONTEXT if unsure.\n")
     return s
 
@@ -70,11 +86,11 @@ def _user(question, ctx):
     block = "\n\n".join(_fmt_chunk(i, c) for i, c in enumerate(ctx, 1))
     return f"Context:\n{block}\n\nFarmer's question: {question}\n\nJSON answer:"
 
-def build_messages(question, labels, chunks, pcfg, strict=False, max_chunks=None):
+def build_messages(question, labels, chunks, pcfg, strict=False, max_chunks=None, mode="quick"):
     """chunks=None -> baseline (no retrieval). Returns (messages, displayed_context)."""
     rag = chunks is not None
     ctx = select_context(chunks, pcfg, max_chunks) if rag else None
-    msgs = [{"role": "system", "content": system_prompt(labels, rag, strict)}]
+    msgs = [{"role": "system", "content": system_prompt(labels, rag, strict, mode)}]
     if pcfg.get("fewshot"): msgs += _fewshot(rag)
     msgs.append({"role": "user", "content": _user(question, ctx)})
     return msgs, (ctx or [])
