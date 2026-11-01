@@ -16,16 +16,16 @@ def labels_text(labels):
 
 MODES = {
     "quick": {"label": "Quick answer", "hint": "3-5 short lines", "tokens": None, "k": None, "support": 1.0, "directive": ""},
-    "detailed": {"label": "Detailed guide", "hint": "step-by-step: confirm, act now, cultural, biological, chemical (label only), prevention", "tokens": 7700, "k": 5, "support": 0.8,
+    "detailed": {"label": "Detailed guide", "hint": "step-by-step: confirm, act now, cultural, biological, chemical (label only), prevention", "tokens": 5096, "k": 5, "support": 0.8,
                  "directive": ("Write a DETAILED step-by-step guide inside \"advice\" as labeled sections, each on its own line, using the JSON newline escape `\\n` between sections. "
                                "Use these section labels when supported by the context: What to confirm in the field: ...; Do now: ...; Cultural control: ...; Biological control: ...; "
                                "Chemical control: ... (name only what the context names; NO dose, follow the product label); Prevention: .... "
                                "Omit unsupported sections. Do not use a pipe (|) as a separator. Keep the whole response valid one-line JSON.")},
     "simple": {"label": "Simple words", "hint": "very short sentences, numbered steps", "tokens": 800, "k": None, "support": 0.9,
                "directive": "Write \"advice\" in very simple words for a farmer with little schooling: 4-6 numbered steps (1. 2. 3.), each under 15 words, no technical terms."},
-    "prevention": {"label": "Prevention plan", "hint": "what to do before and next season", "tokens": 1050, "k": 5, "support": 0.85,
+    "prevention": {"label": "Prevention plan", "hint": "what to do before and next season", "tokens": 2048, "k": 5, "support": 0.8,
                    "directive": "Write \"advice\" as a PREVENTION and monitoring plan for the next crop or season (seed, field hygiene, water and fertilizer, early signs to scout for), only from the context."},
-    "organic": {"label": "Organic / low-chemical", "hint": "cultural + biological options only", "tokens": 1050, "k": 5, "support": 0.85,
+    "organic": {"label": "Organic / low-chemical", "hint": "cultural + biological options only", "tokens": 2048, "k": 5, "support": 0.8,
                 "directive": ("Write \"advice\" using ONLY cultural and biological control from the context. Do not recommend chemical sprays. "
                               "If the context has no biological option, say so and suggest consulting the agriculture officer.")},
 }

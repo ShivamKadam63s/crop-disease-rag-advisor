@@ -1,5 +1,5 @@
 """Streamlit front end. Deploy: Streamlit Community Cloud, main file app/streamlit_app.py, secrets = LLM_API_KEY, LLM_BASE_URL, LLM_MODEL."""
-import html, json, os, sys, time
+import html, json, os, re, sys, time
 from pathlib import Path
 from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
@@ -33,6 +33,21 @@ def read_doc(path):
 def highlighted(text, start, end):
     if start is None or end is None: return html.escape(text).replace("\n", "<br>")
     return (html.escape(text[:start]) + "<mark>" + html.escape(text[start:end]) + "</mark>" + html.escape(text[end:])).replace("\n", "<br>")
+
+ADVICE_SECTION_PATTERN = re.compile(
+    r"\*{0,2}(What to confirm in the field|Do now|Cultural control|Biological control|Chemical control|Prevention)\*{0,2}\s*:\*{0,2}\s*",
+    re.IGNORECASE,
+)
+
+def advice_sections(text):
+    matches = list(ADVICE_SECTION_PATTERN.finditer(text or ""))
+    if not matches or text[:matches[0].start()].strip(): return []
+    sections = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+        content = text[match.end():end].strip(" \t\r\n|;")
+        if content: sections.append((match.group(1), content))
+    return sections
 
 WORKFLOW_LABELS = {
     "start": "Question received", "prep": "Prepare query", "guard": "Scope and intent",
@@ -240,7 +255,11 @@ with tab_adv:
                 st.caption(f"{badge} · retrieval score {cf['dense_top']} (minimum {cf['gate']}) · answer support {cf['support']}")
             if res.get("also_consider"): st.info("Also consider: **" + "**, **".join(res["also_consider"]) + "**. The symptoms you described fit more than one problem, so check the details in the sources.")
             adv = res["advice"]
-            st.markdown("\n".join(f"- {p.strip()}" for p in adv.split(" | ")) if " | " in adv else adv)
+            sections = advice_sections(adv)
+            if sections:
+                for label, content in sections: st.markdown(f"**{label}**\n\n{content}")
+            else:
+                st.markdown("\n".join(f"- {p.strip()}" for p in adv.split(" | ")) if " | " in adv else adv)
             if res.get("advice_en"):
                 with st.expander("English original"): st.markdown(res["advice_en"])
             if res["needs_expert"]: st.warning("The assistant is not fully certain. Please confirm with your local agriculture officer.")
