@@ -1,0 +1,7 @@
+{
+  "variant": "lora_fp16",
+  "source": "data/heldout_agri_text.txt",
+  "n_texts": 25,
+  "n_tokens": 480,
+  "perplexity": 32.840939317046676
+}

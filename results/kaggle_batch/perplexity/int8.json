@@ -1,0 +1,7 @@
+{
+  "variant": "int8",
+  "source": "data/heldout_agri_text.txt",
+  "n_texts": 25,
+  "n_tokens": 480,
+  "perplexity": 33.15527551558973
+}

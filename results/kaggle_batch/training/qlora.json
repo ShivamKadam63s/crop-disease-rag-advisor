@@ -1,0 +1,17 @@
+{
+  "mode": "qlora",
+  "train_seconds": 630.8064913749695,
+  "train_loss": 0.3973691837909894,
+  "val_loss": 0.3552848696708679,
+  "trainable_params": 8798208,
+  "total_params": 323917696,
+  "trainable_pct": 2.716186274676392,
+  "peak_gpu_gb": 5.430900736,
+  "epochs": 3,
+  "lr": 0.0002,
+  "r": 16,
+  "n_train": 405,
+  "gpu": "Tesla T4",
+  "device": "cuda",
+  "adapter_dir": "/tmp/work/agri_advisor/artifacts/models/qlora_adapter"
+}
