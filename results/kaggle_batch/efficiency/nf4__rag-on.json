@@ -1,0 +1,22 @@
+{
+  "variant": "nf4",
+  "rag": true,
+  "gpu": "Tesla T4",
+  "gpu_mem_after_load_gb": 0.457478144,
+  "disk_mb": 457.348842,
+  "n_params_m": 315.119488,
+  "n_prompts": 20,
+  "ttft_ms_p50": 101.87300749930728,
+  "ttft_ms_p95": 110.0204987997131,
+  "tpot_ms_mean": 53.23575110901544,
+  "latency_s_mean": 4.298709892600073,
+  "tokens_in_mean": 931.35,
+  "tokens_out_mean": 79.9,
+  "throughput_tok_s_single": 18.586971904650333,
+  "energy_wh_total": 0.9620971093484423,
+  "energy_wh_per_query": 0.04810485546742212,
+  "gpu_peak_gb_single": 0.624601088,
+  "throughput_tok_s_batch8": 85.82075190454388,
+  "gpu_peak_gb_batch8": 1.709702656,
+  "cost_usd_per_1k_queries": 0.41793012844722927
+}

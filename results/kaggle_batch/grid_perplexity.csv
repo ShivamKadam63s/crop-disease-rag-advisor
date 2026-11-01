@@ -1,0 +1,7 @@
+variant,source,n_texts,n_tokens,perplexity
+fp16,data/heldout_agri_text.txt,25,480,33.365782949094736
+lora_merged_nf4,data/heldout_agri_text.txt,25,480,49.26773733027753
+int8,data/heldout_agri_text.txt,25,480,33.15527551558973
+lora_fp16,data/heldout_agri_text.txt,25,480,32.840939317046676
+nf4,data/heldout_agri_text.txt,25,480,47.660262582746164
+qlora_nf4,data/heldout_agri_text.txt,25,480,46.682764019750934

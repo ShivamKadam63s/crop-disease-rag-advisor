@@ -1,0 +1,52 @@
+{
+  "variant": "qlora_nf4",
+  "variant_cfg": {
+    "backend": "hf",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "quant": "nf4",
+    "adapter_dir": "artifacts/models/qlora_adapter"
+  },
+  "rag": true,
+  "pipeline": "raw",
+  "kb_version": "ad3be9cfa693",
+  "retrieval": {
+    "mode": "local",
+    "remote_url": "http://127.0.0.1:8001",
+    "embedder": {
+      "backend": "fastembed",
+      "model": "BAAI/bge-small-en-v1.5",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "passage_prefix": ""
+    },
+    "index_type": "flat",
+    "hybrid": true,
+    "rrf_k": 60,
+    "candidates": 20,
+    "top_k": 3,
+    "parent_expand": true,
+    "crop_filter": true,
+    "reranker": {
+      "enabled": false,
+      "model": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    },
+    "long_query": {
+      "enabled": true,
+      "trigger_words": 150,
+      "window_words": 100,
+      "stride_words": 50
+    }
+  },
+  "prompt": {
+    "fewshot": true,
+    "max_context_words": 600,
+    "reorder": false,
+    "dedup_jaccard": 0.9
+  },
+  "decision": {
+    "min_dense_score": 0.7,
+    "min_support": 0.45,
+    "max_retries": 1,
+    "escalate_variant": null
+  },
+  "time": "2026-10-31 19:16:38"
+}
